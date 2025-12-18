@@ -7,22 +7,17 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 use Illuminate\Support\Facades\Log;
 
-class DesiredJobTableController extends Controller
+class AnalysisReportV1Controller extends Controller
 {
     protected int $strongMatch = 90;
     protected int $partialMatch = 70;
 
-    public function index()
-    {
-        return $this->dataAnalysisWithBestMatchedPercentage();
-    }
-
-    public function downloadPdfReport()
+    public function downloadPdfReportV1()
     {
         ini_set('memory_limit', '512M');
         $report = $this->dataAnalysisWithBestMatchedPercentagePDF();
 
-        $pdf = Pdf::loadView('reports.job-analysis', compact('report'))
+        $pdf = Pdf::loadView('reports.job-analysis-v1', compact('report'))
             ->setPaper('a4', 'portrait')
             ->setOptions([
                 'defaultFont' => 'DejaVu Sans',
@@ -30,60 +25,7 @@ class DesiredJobTableController extends Controller
                 'isRemoteEnabled' => false,
             ]);
 
-        return $pdf->download('desired-job-analysis-report'.time().'.pdf');
-    }
-
-    public function dataAnalysisWithBestMatchedPercentage()
-    {
-        $csvPath = storage_path('app/files/jobs.csv');
-
-        if (!file_exists($csvPath)) {
-            $this->error('CSV file not found');
-            return;
-        }
-
-        $rows = $this->readCsv($csvPath);
-
-        // Read DB titles ONCE
-        $dbTitles = DesiredJob::pluck('title')->toArray();
-
-        // Group CSV rows by Category
-        $grouped = collect($rows)->groupBy('Category');
-
-        $this->info('========== JOB HIERARCHY ANALYSIS START ==========');
-
-        foreach ($grouped as $category => $items) {
-
-            // 🔹 Analyze parent
-            [$parentMatch, $parentPercent] = $this->bestMatch($category, $dbTitles);
-
-            if ($parentPercent >= $this->strongMatch) {
-                $this->info("CATEGORY '{$category}' → PARENT '{$parentMatch}' ({$parentPercent}%)");
-            } elseif ($parentPercent >= $this->partialMatch) {
-                $this->info("CATEGORY '{$category}' → POSSIBLE PARENT '{$parentMatch}' ({$parentPercent}%)");
-            } else {
-                Log::warning("CATEGORY '{$category}' → NO PARENT MATCH");
-            }
-
-            // 🔹 Analyze children
-            foreach ($items as $row) {
-                $child = trim($row['Title']);
-
-                [$childMatch, $childPercent] = $this->bestMatch($child, $dbTitles);
-
-                if ($childPercent >= $this->strongMatch) {
-                    $this->info("  ✔ CHILD '{$child}' → '{$childMatch}' ({$childPercent}%)");
-                } elseif ($childPercent >= $this->partialMatch) {
-                    $this->info("  ~ CHILD '{$child}' → '{$childMatch}' ({$childPercent}%)");
-                } else {
-                    Log::warning("  ✖ CHILD '{$child}' → NO MATCH");
-                }
-            }
-
-            $this->info('------------------------------------------------');
-        }
-
-        $this->info('========== JOB HIERARCHY ANALYSIS END ==========');
+        return $pdf->download('analysis-report-v1-'.time().'.pdf');
     }
 
     public function dataAnalysisWithBestMatchedPercentagePDF(): array
@@ -135,7 +77,6 @@ class DesiredJobTableController extends Controller
 
         return $report;
     }
-
 
     /**
      * Read CSV into associative array

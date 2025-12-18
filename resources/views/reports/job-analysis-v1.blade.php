@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<h1>Desired Job Hierarchy Analysis Report</h1>
+<h1>Analysis Report - V1</h1>
 <p>Generated at: {{ now()->format('Y-m-d H:i:s') }}</p>
 
 @foreach ($report as $key => $item)
