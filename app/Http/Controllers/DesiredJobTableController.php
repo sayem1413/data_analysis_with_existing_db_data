@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\DesiredJob;
 use Illuminate\Support\Facades\DB;
+use App\Console\Commands\LogJobSimilarity;
+
+use Illuminate\Support\Facades\Log;
 
 class DesiredJobTableController extends Controller
 {
-    public function index() // From manual code and will take suggeation from chatgpt with this logic
+    protected $threshold = 0; 
+
+    public function index()
+    {
+        // $job = new LogJobSimilarity();
+
+        return $this->handle();
+        // dd('Ok');
+    }
+
+    public function index1() // From manual code and will take suggeation from chatgpt with this logic
     {
         $path = storage_path('app/file/jobs.csv');
 
@@ -140,7 +153,7 @@ class DesiredJobTableController extends Controller
     /**
      * Read CSV into associative array
      */
-    private function readCsv(string $path): array
+    private function readCsvOld(string $path): array
     {
         $rows   = [];
         $header = null;
@@ -210,5 +223,175 @@ class DesiredJobTableController extends Controller
             ['title', 'parent_id'],
             ['title_bn', 'updated_at']
         );
+    }
+
+    public function handle()
+    {
+        $csvPath = storage_path('app/files/jobs.csv');
+
+        if (!file_exists($csvPath)) {
+            $this->error("CSV file not found at {$csvPath}");
+            return;
+        }
+
+        // Read CSV
+        $rows = $this->readCsv($csvPath);
+
+        dd($rows);
+
+        // Fetch all titles from DB
+        $allTitles = DesiredJob::pluck('title')->map(fn($t) => trim($t))->toArray();
+
+        $this->info("Starting similarity check...");
+
+        // Process each row in CSV
+        foreach ($rows as $row) {
+
+            // ------------------------
+            // Parent category fuzzy match
+            // ------------------------
+            $category = trim($row['Category']);
+            $categoryMatches = [];
+
+            foreach ($allTitles as $dbTitle) {
+                similar_text($this->normalize($category), $this->normalize($dbTitle), $percent);
+                if ($percent >= $this->threshold) {
+                    $categoryMatches[$dbTitle] = round($percent) . '% matched';
+                }
+            }
+
+            // Log parent category matches
+            if (!empty($categoryMatches)) {
+                $this->info("'{$category}' => " . json_encode($categoryMatches));
+            }
+
+            // ------------------------
+            // Child title fuzzy match
+            // ------------------------
+            $child = trim($row['Title']);
+            $childMatches = [];
+
+            foreach ($allTitles as $dbTitle) {
+                similar_text($this->normalize($child), $this->normalize($dbTitle), $percent);
+                if ($percent >= $this->threshold) {
+                    $childMatches[$dbTitle] = round($percent) . '% matched';
+                }
+            }
+
+            // Log child title matches
+            if (!empty($childMatches)) {
+                $this->info("'{$child}' => " . json_encode($childMatches));
+            }
+        }
+
+        $this->info("Similarity check finished.");
+    }
+
+    public function handle1()
+    {
+        $csvPath = storage_path('app/file/jobs.csv');
+
+        if (!file_exists($csvPath)) {
+            $this->error("CSV file not found.");
+            return;
+        }
+
+        $rows = $this->readCsv($csvPath);
+
+        // Fetch all DB titles once (performance-safe)
+        $dbTitles = DesiredJob::pluck('title')->map(fn ($t) => trim($t))->toArray();
+
+        Log::info('========== JOB SIMILARITY CHECK STARTED ==========');
+
+        foreach ($rows as $row) {
+
+            // -------------------------
+            // CATEGORY (Parent)
+            // -------------------------
+            $category = trim($row['Category']);
+            $categoryMatches = $this->findMatches($category, $dbTitles);
+
+            if (empty($categoryMatches)) {
+                Log::info("'{$category}' => NO MATCH FOUND");
+            } else {
+                Log::info("'{$category}' => " . json_encode($categoryMatches));
+            }
+
+            // -------------------------
+            // TITLE (Child)
+            // -------------------------
+            $title = trim($row['Title']);
+            $titleMatches = $this->findMatches($title, $dbTitles);
+
+            if (empty($titleMatches)) {
+                Log::info("'{$title}' => NO MATCH FOUND");
+            } else {
+                Log::info("'{$title}' => " . json_encode($titleMatches));
+            }
+        }
+
+        Log::info('========== JOB SIMILARITY CHECK FINISHED ==========');
+
+        $this->info('Similarity check logged to laravel.log');
+    }
+
+    /**
+     * Read CSV into associative array
+     */
+    private function readCsv(string $path): array
+    {
+        $rows = [];
+        $header = null;
+
+        if (($handle = fopen($path, 'r')) !== false) {
+            while (($data = fgetcsv($handle, 1000, ',')) !== false) {
+                if (!$header) {
+                    $data[0] = preg_replace('/^\xEF\xBB\xBF/', '', $data[0]); // remove BOM
+                    $header = $data;
+                    continue;
+                }
+                $rows[] = array_combine($header, $data);
+            }
+            fclose($handle);
+        }
+
+        return $rows;
+    }
+
+    private function findMatches(string $needle, array $haystack): array
+    {
+        $matches = [];
+
+        foreach ($haystack as $dbTitle) {
+            similar_text(
+                $this->normalize($needle),
+                $this->normalize($dbTitle),
+                $percent
+            );
+
+            if ($percent >= $this->threshold) {
+                $matches[$dbTitle] = round($percent) . '% matched';
+            }
+        }
+
+        return $matches;
+    }
+
+    /**
+     * Normalize string for fuzzy matching
+     */
+    private function normalize(string $str): string
+    {
+        return strtolower(preg_replace('/[\s\(\)]/', '', trim($str)));
+    }
+
+    private function error($text)
+    {
+        Log::error($text);
+    }
+
+    private function info($text)
+    {
+        Log::info($text);
     }
 }

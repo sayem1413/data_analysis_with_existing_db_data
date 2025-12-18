@@ -8,4 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/desired-job-merge', [DesiredJobTableController::class, 'index']);
+Route::get('/desired-job-merge1', [DesiredJobTableController::class, 'index1']);
 Route::get('/desired-job-merge2', [DesiredJobTableController::class, 'index2']);

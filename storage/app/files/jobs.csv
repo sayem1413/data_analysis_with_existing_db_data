@@ -1,0 +1,1451 @@
+Serial,Title,BMET_reference_code,Category
+1,Billing and credit control,1,Management and Supervisory Role
+2,Accountant,1,Finance & Accounting
+3,Accountant(Gen.),1,Finance & Accounting
+4,Administrative Officer,2,Management and Supervisory Role
+5,Agriculture Engineer,3,Agriculture
+6,Agricultural,4,Agriculture
+7,Agriculture Labour,4,Agriculture
+8,Air Conditioning Engineer,5,Agriculture
+9,Air Conditioning Technician,6,Refrigeration & Air-conditioning
+10,Air Hostess/Stewards,7,Airline Worker
+11,Aluminium Technician,8,Welder and fabricator
+12,Anesthesiologist,9,Doctor & Healthcare Worker
+13,Technical Architect,10,IT
+14,Architect,10,Architect
+15,Building Architect,10,Architect
+16,Architectural Labour,11,Architect
+17,Artist,12,Media / Entertainment
+18,Auto Denter,13,Automobile Worker
+19,Auto Painter,14,Automobile Worker
+20,Autolubricator and Oiler,15,Automobile Worker
+21,Automobile Engineer,16,Engineer
+22,Automobile Mechanic/Technician,17,Automobile Worker
+23,Baby Sitter,18,Caregiver
+24,Baker (Food maker),19,Cook/Chef
+25,Banker,20,Finance & Accounting
+26,Barber,21,Barber & Beautician
+27,Biochemistry Specialist,22,Scientist & Researcher
+28,Biologist,23,Scientist & Researcher
+29,Blacksmith,24,Craftsman
+30,Blood Bank Technician,25,Doctor & Healthcare Worker
+31,Business,26,Management and Supervisory Role
+32,Businessman,26,Management and Supervisory Role
+33,Butcher,27,Cook/Chef
+34,Car Washing and Painting,28,Automobile Worker
+35,Cardiologist,29,Doctor & Healthcare Worker
+36,Care Taker,30,Security Worker
+37,Construction formwork Carpenter,31,Construction Worker
+38,Carpenter,31,Carpenter
+39,Finishing Carpenter,31,Carpenter
+40,Furniture Carpenter,31,Carpenter
+41,Wood Worker/Carpenter,31,Carpenter
+42,Wooden Formwork Carpenter,31,Carpenter
+43,Carpet Labour,32,Construction Worker
+44,Cashier,33,Finance & Accounting
+45,Chartered Accountant,34,Finance & Accounting
+46,Chemical Engineer,35,Engineer
+47,Chemist,36,Scientist & Researcher
+48,Civil Engineer,37,Engineer
+49,General Civil Engineer,37,Construction Worker
+50,Building Exterior Cleaner,38,Cleaner
+51,Building Facade Cleaner,38,Cleaner
+52,Carpet and Rug Cleaner,38,Cleaner
+53,Chimney Cleaner,38,Cleaner
+54,Cleaner,38,Cleaner
+55,Cleaning Worker,38,Cleaner
+56,Offices and facilities cleaning worker,38,Cleaner
+57,Ship & Ship Tank Cleaner,38,Cleaner
+58,Street Clean Worker,38,Cleaner
+59,Street cleaner,38,Cleaner
+60,Vehicle Cleaner,38,Cleaner
+61,Stock Clerk,39,Warehouse and Store Worker
+62,Distribution Clerk,39,Warehouse and Store Worker
+63,Clerk,39,Management and Supervisory Role
+64,Ticket clerk,39,Management and Supervisory Role
+65,Barista,40,Hotel and Tourism Worker
+66,Coffee or Tea Maker,40,Cook/Chef
+67,Computer Service Engineer,42,IT
+68,Computer Engineer,42,Engineer
+69,Computer Operator,43,IT
+70,Computer Systems Manager,43,IT
+71,Computer Programmer/Software Developer,44,IT
+72,Computer Technician/Hardware Engineer,45,IT
+73,Concrete Mixer Man,46,Construction Worker
+74,Construction Worker,47,Construction Worker
+75,Construction worker,47,Construction Worker
+76,Formwork construction worker,47,Construction Worker
+77,Contract Assistant Cook,48,Cook/Chef
+78,Home Cook,48,Cook/Chef
+79,Kitchen Chef,48,Cook/Chef
+80,Data Entry Operator,49,Management and Supervisory Role
+81,Database Administrator,50,IT
+82,Decoration Labour,51,General worker
+83,Dental Technician,52,Doctor & Healthcare Worker
+84,Dentist,53,Doctor & Healthcare Worker
+85,Dermatologist,54,Doctor & Healthcare Worker
+86,Dish Cleaner,55,Cook/Chef
+87,Dispensers,56,Doctor & Healthcare Worker
+88,Doctor,57,Doctor & Healthcare Worker
+89,Door Fixer,58,Carpenter
+90,Door Maker,59,Carpenter
+91,Drafts Man,60,IT
+92,Civil Draftsman,60,Construction Worker
+93,Driver,61,Driver/Vehicle Operator
+94,Motorcycle Driver,61,Driver/Vehicle Operator
+95,Personal Driver,61,Driver/Vehicle Operator
+96,Truck Driver,61,Driver/Vehicle Operator
+97,Electrical Drafts Man,62,IT
+98,Electrical and Electronic Engineer,63,Engineer
+99,Building Electrician,64,Electrician
+100,Electrician,64,Electrician
+101,Construction Electrician,64,Construction Worker
+102,Electronic Mechanic,65,Electrician
+103,Textile Tailor,66,Textile Worker
+104,Embroidery/Tailor,66,Factory & Manufacturing Worker
+105,Factory Worker,67,Factory & Manufacturing Worker
+106,Farm Laborer,68,Agriculture
+107,Farmer,68,Agriculture
+108,Home farmer,68,Agriculture
+109,Fashion Designer,69,Creative/Arts
+110,Fireman,70,Security Worker
+111,Coastal fisher,71,Agriculture
+112,Fisherman,71,Agriculture
+113,Fitter,72,Factory & Manufacturing Worker
+114,Flight Attendant,73,Airline Worker
+115,Food & Beverage Counter Server,74,Hotel and Tourism Worker
+116,Food and Beverage Counter Worker,74,Cook/Chef
+117,Food Server,74,Cook/Chef
+118,Construction Foreman,75,Construction Worker
+119,Foreman,75,Construction Worker
+120,Workshop Worker,76,Factory & Manufacturing Worker
+121,Fuel Man,77,Fuel Filling Station Worker
+122,Gantry Operator,78,Driver/Vehicle Operator
+123,Gardener,79,Agriculture
+124,Garments and Pattern Cutter,80,Textile Worker
+125,Garments Operator,80,Textile Worker
+126,Garments Worker,80,Textile Worker
+127,Gas Pump Attendant,81,Fuel Filling Station Worker
+128,Gas Station Attendant,81,Fuel Filling Station Worker
+129,Gas Worker,82,Fuel Filling Station Worker
+130,General Health Specialist,84,Doctor & Healthcare Worker
+131,Gold Smith,85,Craftsman
+132,Grinder,86,Factory & Manufacturing Worker
+133,Grocer,87,Salesperson
+134,Gynecologist,88,Doctor & Healthcare Worker
+135,Hairdresser,89,Barber & Beautician
+136,Heavy Vehicle Driver,90,Driver/Vehicle Operator
+137,Helper,91,House Keeper
+138,Horse Rider,92,Agriculture
+139,Hospital Attendant,93,Nurse
+140,Hospital Management,94,Hotel and Tourism Worker
+141,Hotel Housekeeper,96,Management and Supervisory Role
+142,House Keeper,96,House Keeper
+143,Room Maid,96,Hotel and Tourism Worker
+144,Domestic Worker,97,House Keeper
+145,Home Worker,97,House Keeper
+146,House Worker,97,House Keeper
+147,IT Consultant,98,IT
+148,3D Electrification Visualisation Specialist,99,IT
+149,IT Professional,99,Engineer
+150,Imam Minister of Religion,100,Imam
+151,Imam/Muazzem,100,Imam
+152,IE Executive,101,Management and Supervisory Role
+153,IE Manager,101,Management and Supervisory Role
+154,Industrial Engineer,101,Engineer
+155,Infectious Disease Specialist,102,Doctor & Healthcare Worker
+156,Interior Designer,103,Creative/Arts
+157,Iron man,104,Factory & Manufacturing Worker
+158,Journalist,105,Media / Entertainment
+159,Juice Maker,106,Cook/Chef
+160,Food Preparation Worker,107,Cook/Chef
+161,Kitchen Worker,107,Cook/Chef
+162,Worker To clean kitchen Appliances,107,Cook/Chef
+163,Lab. Technician,108,Technician & Maintenance Worker
+164,Storage Labour,109,Warehouse and Store Worker
+165,Labour,109,General worker
+166,Reservoir Labour,109,Cleaner
+167,Nursery Labour,109,Agriculture
+168,Labour Controller,110,Factory & Manufacturing Worker
+169,Laundry Man,111,Cleaner
+170,Lawyer,112,Legal Professional
+171,Legal Professional,112,Legal Professional
+172,Leather Technician,113,Factory & Manufacturing Worker
+173,Librarian,114,Teacher
+174,Meat processing machine operator,115,Technician & Maintenance Worker
+175,Machine Operator,115,Factory & Manufacturing Worker
+176,Excavating Machine Operator,115,Driver/Vehicle Operator
+177,Maintenance Engineer,116,Engineer
+178,Electrical Devices Maintenance Technician,117,Electrician
+179,Electrical Maintenance Labor,117,Electrician
+180,Maintenance Technician,117,Electrician
+181,Marine Engineer,119,Engineer
+182,Market Manager,120,Management and Supervisory Role
+183,Marketing Specialist,121,Management and Supervisory Role
+184,Specialist- Digital Procurement,121,IT
+185,Mason,122,Mason
+186,Mason,122,Mason
+187,Mechanical Drafts Man,123,IT
+188,Mechanical Engineer,124,Engineer
+189,Mechanical Technician,125,Technician & Maintenance Worker
+190,Medical Technician,126,Doctor & Healthcare Worker
+191,Medicine Specialist,127,Doctor & Healthcare Worker
+192,Merchandiser,128,Management and Supervisory Role
+193,Metallurgical Engineer,129,Engineer
+194,Microbiologist,130,Scientist & Researcher
+195,Naval Architect,131,Engineer
+196,Neonatal Specialist,132,Doctor & Healthcare Worker
+197,Nerves Surgery Specialist,133,Doctor & Healthcare Worker
+198,Network Administrator,134,Engineer
+199,Network Engineer,135,Engineer
+200,Network Technician,136,Technician & Maintenance Worker
+201,Nurse,137,Nurse
+202,Nursing Auxiliary Assistant,137,Nurse
+203,Nurse,137,Doctor & Healthcare Worker
+204,Care Worker,137,Caregiver
+205,Nutrition Specialist,138,Doctor & Healthcare Worker
+206,Asst Executive Man,139,Management and Supervisory Role
+207,Office Assistant,139,Management and Supervisory Role
+208,Oil Changer,140,Factory & Manufacturing Worker
+209,Oxygen Welder,141,Welder and fabricator
+210,Painter,142,Painter
+211,Petro-Chemical Engineer,143,Engineer
+212,Pharmacist,144,Doctor & Healthcare Worker
+213,Physician,145,Doctor & Healthcare Worker
+214,Physiologist,146,Scientist & Researcher
+215,Pipe Worker,147,Plumber
+216,Plasterer,148,Construction Worker
+217,Plumber,149,Plumber
+218,Plumber,149,Plumber
+219,Auto Plumber,149,Automobile Worker
+220,Plumbing Drafts Man,150,Plumber
+221,Porter,151,Hotel and Tourism Worker
+222,Private Service,152,House Keeper
+223,Conference and Exhibition Coordinator,153,Management and Supervisory Role
+224,Project Coordinator,153,Management and Supervisory Role
+225,Project Engineer,154,Engineer
+226,Project Manager,155,Management and Supervisory Role
+227,Receptionist,156,Management and Supervisory Role
+228,Recreation Attendant,157,Hotel and Tourism Worker
+229,Rod Binder,158,Construction Worker
+230,Sales Manager,159,Salesperson
+231,Sales Executive,160,Salesperson
+232,Sales Officer,160,Salesperson
+233,Sales Representative,160,Salesperson
+234,Construction Materials Salesman,161,Salesperson
+235,Flower and plants seller,161,Salesperson
+236,Furniture Seller,161,Salesperson
+237,Salesman,161,Salesperson
+238,Seller,161,Salesperson
+239,Vendor,161,Salesperson
+240,Sandwich Maker,162,Cook/Chef
+241,Screen Fitter,163,Carpenter
+242,Screen Maker,164,Others
+243,Seaman,165,Shipping Work
+244,Seat Maker,166,Carpenter
+245,Security Guard,167,Security Worker
+246,Protected Animal Keeper,168,Agriculture
+247,Shepherd,168,Agriculture
+248,Shoe Maker,169,Factory & Manufacturing Worker
+249,Sign Writer,170,Carpenter
+250,Sofa Maker,171,Carpenter
+251,Specialist in Humanities,172,Teacher
+252,Specialist Doctor,172,Doctor & Healthcare Worker
+253,Steel Worker,173,Welder and fabricator
+254,Shop Keeper,174,Warehouse and Store Worker
+255,Store Keeper,174,Warehouse and Store Worker
+256,Student,175,Others
+257,Surgeon,176,Doctor & Healthcare Worker
+258,System Administrator,177,Engineer
+259,System Analyst,178,Engineer
+260,System Designer,179,Engineer
+261,Adult Education tutor,180,Teacher
+262,Assistant professor,180,Teacher
+263,Play Worker,180,Teacher
+264,Teacher,180,Teacher
+265,Nursery Assistant,180,Nurse
+266,Telecommunication Engineer,181,Telecommunication
+267,Telephone Mechanic,182,Telecommunication
+268,Telephone Operator,183,Management and Supervisory Role
+269,Television Photographer,184,Media / Entertainment
+270,Textile Engineer,185,Engineer
+271,Thermal Engineer,186,Engineer
+272,Tiles Worker,187,Construction Worker
+273,Tourist Guide,188,Hotel and Tourism Worker
+274,Tower Crane Operator,189,Driver/Vehicle Operator
+275,Trainer,190,Teacher
+276,Translator,191,Others
+277,Tug Master,192,Shipping Work
+278,Typist,193,Management and Supervisory Role
+279,Vulcanizer,194,Automobile Worker
+280,Waiter,195,Cook/Chef
+281,Web Designer/Developer,196,IT
+282,Web Developer,196,IT
+283,Structural welder Smaw Cs,197,Welder and fabricator
+284,Welder/Fabricator,197,Welder and fabricator
+285,Welders and Flame Cutters,197,Welder and fabricator
+286,Senior Staff Nurse OT (Male),199,Nurse
+287,Senior Staff Nurse OT (Female),200,Nurse
+288,Wood Painter,201,Carpenter
+289,Building Painter,202,Construction Worker
+290,Car Painter,203,Automobile Worker
+291,Spray Painter,204,Painter
+292,Vehicle Spray Painter,204,Automobile Worker
+293,Pipe Welder,205,Welder and fabricator
+294,Pipe Fabricators,206,Welder and fabricator
+295,Pipes Cleaning Labour,207,Cleaner
+296,Pipes Lying Labour,208,Plumber
+297,Pipes Cleaning Labour (With Spray),209,Cleaner
+298,Pipe Fitting Labour,210,Plumber
+299,Gas Pipeline Erection Labour,211,Plumber
+300,Pipe Foreman,212,Plumber
+301,Assistant Plumber,213,Plumber
+302,Sea Guard,214,Security Worker
+303,Male Security (A-Grade),215,Security Worker
+304,Security Services,216,Security Worker
+305,Shipyard Safety Securuity,216,Security Worker
+306,Safety and Security Manager,216,Management and Supervisory Role
+307,Security Engineer,216,Engineer
+308,Patrolling Security,217,Security Worker
+309,Female Security,218,Security Worker
+310,Guard,219,Security Worker
+311,Home Guard,219,Security Worker
+312,Mechanical Technician (Ammonia Storage),220,Technician & Maintenance Worker
+313,Mechanical Technician (Compressor),221,Technician & Maintenance Worker
+314,Mechanical Technician (Ammonia),222,Technician & Maintenance Worker
+315,Mechanical Technician (Material),223,Technician & Maintenance Worker
+316,Mechanical Technician (Maintenance),224,Technician & Maintenance Worker
+317,Mechanical Technician (Workshop),225,Technician & Maintenance Worker
+318,Steel Fixer,226,Scaffolding and Metal Worker
+319,Steel Marker,227,Scaffolding and Metal Worker
+320,Steel Wire Machine Operator,228,Scaffolding and Metal Worker
+321,CNC Machine Operator,228,Automobile Worker
+322,Assistant Steel Fixer,229,Construction Worker
+323,Steel Concrete Labour,230,Scaffolding and Metal Worker
+324,Tiles Fixer,231,Construction Worker
+325,Asst. Tile Fitter,232,Construction Worker
+326,Charge Hand Tile Setter/Marble layer,233,Construction Worker
+327,Tile Fixer (Wall),234,Construction Worker
+328,Tile Fixer(Wall),234,Construction Worker
+329,Plumber specialized in Textile finishing,235,Textile Worker
+330,Fitter Grade-A,236,Factory & Manufacturing Worker
+331,Carpet Fitter,238,Construction Worker
+332,Marine Fitter,240,Shipping Work
+333,Instrument Fitter,241,Electrician
+334,Mechanical Fitter,242,Technician & Maintenance Worker
+335,Auto Parts Fitter,242,Automobile Worker
+336,Ship Fitter,243,Shipping Work
+337,Auto Greasing Lubricator,244,Automobile Worker
+338,Fork Lift Driver,246,Driver/Vehicle Operator
+339,Compactor/Roller Driver,247,Driver/Vehicle Operator
+340,LD Driver,248,Driver/Vehicle Operator
+341,Light Duty Vehicle Driver,248,Driver/Vehicle Operator
+342,Taxi driver,248,Driver/Vehicle Operator
+343,Construction Worker -Cum- Driver,249,Driver/Vehicle Operator
+344,Heavy Driver,249,Driver/Vehicle Operator
+345,Public Driver,250,Driver/Vehicle Operator
+346,Oxigen Driver,251,Welder and fabricator
+347,Medium Vehicle Driver,252,Driver/Vehicle Operator
+348,Shuttering Carpenter,253,Carpenter
+349,Carpenter (A Grade),254,Carpenter
+350,Assistant Carpenter,255,Carpenter
+351,City cleaning labor,256,Cleaner
+352,Public Area Cleaner,256,Cleaner
+353,Car Cleaner,257,Automobile Worker
+354,Window Cleaner,259,Cleaner
+355,Khadem/Cleaner,260,Cleaner
+356,Archives Clerk,261,Management and Supervisory Role
+357,Continental Cook,262,Cook/Chef
+358,Foreign Food Cook,262,Cook/Chef
+359,Arabic Food Cook,263,Cook/Chef
+360,Assistant Cook,264,Cook/Chef
+361,Assistant Head Chef,264,Cook/Chef
+362,Cont. Cook,265,Cook/Chef
+363,Salad Cook,266,Cook/Chef
+364,Rice Cook,267,Cook/Chef
+365,Pakistani Cook,268,Cook/Chef
+366,Breakfast Cook,269,Cook/Chef
+367,Indian Cook,270,Cook/Chef
+368,Roast Maker,271,Cook/Chef
+369,Halwah Maker,272,Textile Worker
+370,Bread Maker,275,Cook/Chef
+371,Shawarma Fryer,276,Cook/Chef
+372,Meat Fryer,277,Cook/Chef
+373,Fryer,278,Cook/Chef
+374,Sweet Maker,279,Cook/Chef
+375,Chicken Fryer,280,Cook/Chef
+376,Chemical Food Maker,281,Cook/Chef
+377,Food Processing And Preservation,282,Cook/Chef
+378,Fruits and Vegetables Preserver,282,Cook/Chef
+379,Khaleeji Cook,283,Cook/Chef
+380,Doctor (Female),284,Doctor & Healthcare Worker
+381,General Doctor,285,Management and Supervisory Role
+382,Chest Doctor,287,Doctor & Healthcare Worker
+383,Assistant Electrician,288,Electrician
+384,Overhead Line Electrician,289,Electrician
+385,Maintanance Electrician,290,Electrician
+386,Wiring Electrician,291,Technician & Maintenance Worker
+387,Auto Electrician,292,Automobile Worker
+388,High Voltage Electrician,293,Electrician
+389,Electrician Wiring Technician,294,Electrician
+390,Asst. Auto Electrician,295,Automobile Worker
+391,Network Electrician,296,Telecommunication
+392,A/C and Refrigerator Electrician,297,Refrigeration & Air-conditioning
+393,Elevator Electrician,298,Electrician
+394,Equipment Electrician,299,Electrician
+395,Electrician (Distribution Board),300,Electrician
+396,Swing Line Helper (Female),301,Welder and fabricator
+397,Sewing Operator,302,Welder and fabricator
+398,Swing Line Checker,302,Welder and fabricator
+399,Swing Line Checker (Female),303,Welder and fabricator
+400,Garments Packer (Female),304,Textile Worker
+401,Garment Production Manager,305,Textile Worker
+402,Production Operator (Female),306,Factory & Manufacturing Worker
+403,Production Line Worker,307,Factory & Manufacturing Worker
+404,Production Worker,307,Factory & Manufacturing Worker
+405,Production Assistant,308,Management and Supervisory Role
+406,Production Manager,309,Factory & Manufacturing Worker
+407,Production Executive,310,Factory & Manufacturing Worker
+408,Production in charge,310,Factory & Manufacturing Worker
+409,Tailor,311,Welder and fabricator
+410,Military Tailor,311,Textile Worker
+411,Women S Clothes Dressmaker- General,311,Factory & Manufacturing Worker
+412,Single Needle Operator,312,Welder and fabricator
+413,Double Niddle Operator,313,Welder and fabricator
+414,Supervisor (Finishing),314,Management and Supervisory Role
+415,Finishing Button,315,Welder and fabricator
+416,Cutting Master,316,Factory & Manufacturing Worker
+417,Floor In Charge,317,Management and Supervisory Role
+418,Floor Man,318,Factory & Manufacturing Worker
+419,Finishing Man,319,Shipping Work
+420,House Keeping Attendent,320,House Keeper
+421,Chambermaid,320,Hotel and Tourism Worker
+422,Warehouse worker,321,Warehouse and Store Worker
+423,Loading Unloading labour,321,Loading Unloading Labor
+424,House Boy,322,House Keeper
+425,Janitor,323,Cleaner
+426,Servent,324,House Keeper
+427,Scaffolding Labour,326,Scaffolding and Metal Worker
+428,Road Maintanence Labour,327,Construction Worker
+429,Fixing Labour,328,Construction Worker
+430,Auto Labour,329,Automobile Worker
+431,Asst. Auto Labour,330,Automobile Worker
+432,Concrete Labour,331,Construction Worker
+433,Machine Labour,332,Factory & Manufacturing Worker
+434,Labour (Junior),333,General worker
+435,General Labour (Junior),334,General worker
+436,Common Labour,335,General worker
+437,Building Labour,336,General worker
+438,Workshop Labour,337,Factory & Manufacturing Worker
+439,Glass Compound,338,Factory & Manufacturing Worker
+440,Glass Labour,338,Craftsman
+441,Window Cleaning Labour,339,Cleaner
+442,Loading & Unloading Labour,340,Loading Unloading Labor
+443,Loading Unloading Labour,340,Loading Unloading Labor
+444,Loading Unloading Worker,340,Loading Unloading Labor
+445,Loading UnloadingÂ Labour,340,Loading Unloading Labor
+446,Transport Car Worker,340,Automobile Worker
+447,Juice Labour,341,Cook/Chef
+448,Cleaning Labour,343,Cleaner
+449,Offices & Facilities Cleaning Labor,343,Cleaner
+450,Restaurant Labour,344,Cook/Chef
+451,Restaurant Worker,344,Cook/Chef
+452,Embroidery Labour,345,Textile Worker
+453,Knitting Machine Operator,345,Textile Worker
+454,Hospital Cleaning worker,346,Management and Supervisory Role
+455,Hospital Cleaner,346,Cleaner
+456,Hospital Cleaning Labour,346,Cleaner
+457,Female Press,347,Textile Worker
+458,Press Labour,347,Textile Worker
+459,Electroplating Labour,348,Factory & Manufacturing Worker
+460,Female Labour,349,Factory & Manufacturing Worker
+461,Cleaning Labour (Female),350,Cleaner
+462,Generator Labour,351,Technician & Maintenance Worker
+463,Shipping Labour,352,Shipping Work
+464,Jockey Man,354,Others
+465,Juice Server,356,Hotel and Tourism Worker
+466,Office Boy,358,Management and Supervisory Role
+467,Remove oil spots,359,Cleaner
+468,Maker,360,Factory & Manufacturing Worker
+469,Horse Stable Man,362,Agriculture
+470,Stone Keeper,363,Warehouse and Store Worker
+471,Time Keeper,365,Management and Supervisory Role
+472,Buttonhole Maker,366,Textile Worker
+473,Wheel Checker,367,Automobile Worker
+474,Messenger,368,Others
+475,Presser General,369,Textile Worker
+476,Crane Operator,370,Driver/Vehicle Operator
+477,Assist. Tug Master,371,Shipping Work
+478,Bee Care Taker,372,Agriculture
+479,Beekeeper,372,Agriculture
+480,Laundry Attendant,373,Cleaner
+481,General Attendant,374,Management and Supervisory Role
+482,Fuel Attendant,375,Fuel Filling Station Worker
+483,Staff Locker Attendant,376,Security Worker
+484,Camel men,377,Agriculture
+485,Bee Collector,378,Agriculture
+486,Construction Installer,379,Construction Worker
+487,Building / Construction Helper,380,Construction Worker
+488,Road Construction,381,Construction Worker
+489,Car Decoration Labor,382,Automobile Worker
+490,Decoration Labor,383,Others
+491,Car Wheel Repair,384,Automobile Worker
+492,Catering Handler,385,Cook/Chef
+493,Food Handling,385,Cook/Chef
+494,Catering Supplier,386,Salesperson
+495,Masonary Asst. Concrete,387,Mason
+496,Concreter,388,Construction Worker
+497,Cattle Breeder,389,Agriculture
+498,Cattle Herder,389,Agriculture
+499,Cow Boy,389,Agriculture
+500,Digger,390,Driver/Vehicle Operator
+501,Egg Collector,391,Agriculture
+502,Nursery Labour,392,Agriculture
+503,Fish Cleaner,393,Cook/Chef
+504,Fish Cutter,393,Cook/Chef
+505,Mason Helper,394,Mason
+506,Mason/Bricklayer,395,Mason
+507,Mason (Roof Insulation),396,Mason
+508,Roofer,396,Construction Worker
+509,Mason (Mixer),397,Mason
+510,Assistant Mason,398,Mason
+511,Mason (Plaster/Block),399,Mason
+512,Electro Medical Technician,400,Electrician
+513,Medical Science Technician,401,Doctor & Healthcare Worker
+514,Nurse (Male),402,Nurse
+515,1st Commis(Kitchen),403,Cook/Chef
+516,1st Commis(Pastry),404,Cook/Chef
+517,6G Smaw,406,Welder and fabricator
+518,AC Engineer,407,Refrigeration & Air-conditioning
+519,Others,408,Others
+520,AUTOLUBRICATAR AND OILIER,409,Automobile Worker
+521,Actor,410,Media / Entertainment
+522,Sales Administrator,411,Salesperson
+523,Administrator,411,Management and Supervisory Role
+524,Air Host,412,Airline Worker
+525,All Round Foreman,413,Construction Worker
+526,Aluminium Fabricator,414,Welder and fabricator
+527,Aluminium Fitter,414,Welder and fabricator
+528,Aluminum Technician,415,Welder and fabricator
+529,Anesthesia Technician,416,Doctor & Healthcare Worker
+530,Architect Engineer,417,Architect
+531,Architect Labour,418,Architect
+532,Architecture Labour,419,Architect
+533,Army,420,Others
+534,Artificial Kidney Technician,421,Doctor & Healthcare Worker
+535,Asphalt cutting,422,Construction Worker
+536,Asphalt Mixing,423,Construction Worker
+537,Assembler,424,Factory & Manufacturing Worker
+538,Cooling Devices Assembler,424,Factory & Manufacturing Worker
+539,Plastic and Metal Products Assembling Worker,424,Factory & Manufacturing Worker
+540,Furniture Assembling Worker,424,Carpenter
+541,Assistant Ductman,425,Welder and fabricator
+542,Ductman,425,Refrigeration & Air-conditioning
+543,Assistant Manager,426,Management and Supervisory Role
+544,Asst. Butcher,427,Cook/Chef
+545,Asst. Ceramic Mason,428,Mason
+546,Asst. Head Chief,429,Cook/Chef
+547,Asst. Marable Mason,430,Mason
+548,Asst. Plaster Mason,431,Mason
+549,Atomic Measuring Instrument Engineer,432,Engineer
+550,Audio Technician,433,Technician & Maintenance Worker
+551,Auto Lubricator,434,Automobile Worker
+552,Auto Lubricator And Washing Labour,435,Automobile Worker
+553,Auto Mechanic,436,Automobile Worker
+554,Automatic Slitter Operator,437,Factory & Manufacturing Worker
+555,Backer,438,Construction Worker
+556,Banks Man Rigger,439,Finance & Accounting
+557,Bar Tender,440,Hotel and Tourism Worker
+558,Bartender,440,Hotel and Tourism Worker
+559,Bar Man,441,Hotel and Tourism Worker
+560,Barbar,442,Barber & Beautician
+561,Barber(female),443,Barber & Beautician
+562,Batch Plant Operator,444,Factory & Manufacturing Worker
+563,Bean Maker,445,Cook/Chef
+564,Beautician,446,Barber & Beautician
+565,Bell Boy,447,Hotel and Tourism Worker
+566,Bellboys,448,Hotel and Tourism Worker
+567,Blaster,449,Construction Worker
+568,Block Layer,450,Construction Worker
+569,Block Man,451,Construction Worker
+570,Blood Disease Specialist,452,Doctor & Healthcare Worker
+571,Bobcats/JCb Operator,453,Driver/Vehicle Operator
+572,Brick Worker,454,Construction Worker
+573,Buldozer Operator,455,Driver/Vehicle Operator
+574,Camp Bars,456,Hotel and Tourism Worker
+575,Camp Boss,457,Management and Supervisory Role
+576,Captain,458,Shipping Work
+577,Pilot,458,Airline Worker
+578,Car Up Holesterer,459,Automobile Worker
+579,Cargo Handler,460,Loading Unloading Labor
+580,Caster,461,Factory & Manufacturing Worker
+581,Catering / Supplier,462,Cook/Chef
+582,Catering Hand,463,Cook/Chef
+583,Ceramic Cerver,464,Mason
+584,Ceramic Mason,465,Mason
+585,Mason/Tile Layer,465,Mason
+586,Ceramic Technician,466,Construction Worker
+587,Chamber Man,467,Technician & Maintenance Worker
+588,Chapati Maker,468,Cook/Chef
+589,Chaperone(female),469,Security Worker
+590,Charge Hand Block Layer,470,Construction Worker
+591,Charge Hand Civil,471,Construction Worker
+592,Charge Hand Electrical,472,Construction Worker
+593,Charge Hand Mechanical,473,Construction Worker
+594,Charge Hand Plumbing,474,Plumber
+595,"Charge Hand Tile Setter, Marble layer",475,Construction Worker
+596,Tile Setter,475,Construction Worker
+597,Chartered Accountants,476,Finance & Accounting
+598,Checker,477,Factory & Manufacturing Worker
+599,Assistant Chef,478,Cook/Chef
+600,Chef/Cook,478,Cook/Chef
+601,Head Chef,478,Cook/Chef
+602,Indian Cury Chef,478,Cook/Chef
+603,Pastry Chef,478,Cook/Chef
+604,Special Chef De Partie-South Asian,478,Cook/Chef
+605,Chemistry Teacher,480,Teacher
+606,Chief the Party,481,Cook/Chef
+607,Circular Loom Operator,482,Welder and fabricator
+608,Civil F/M,483,Construction Worker
+609,Cleaning Labour(Female),484,Cleaner
+610,Offices & Facilities Cleaning Worker ( Female ),484,Cleaner
+611,Cleaning Supervisor,485,Cleaner
+612,Coffee Maker,487,Cook/Chef
+613,Coiling Machine Operator,488,Factory & Manufacturing Worker
+614,Color Composing Technician,489,Technician & Maintenance Worker
+615,Commis I,490,Cook/Chef
+616,Commis II,491,Cook/Chef
+617,Communication System Engineer,492,IT
+618,Conc Worker,493,Construction Worker
+619,Concrete Foreman,494,Construction Worker
+620,Construction Manager,495,Construction Worker
+621,Administrative Consultant,496,Management and Supervisory Role
+622,Consultant,496,Management and Supervisory Role
+623,Management Consultant,496,Management and Supervisory Role
+624,Engineering Consultant,496,Engineer
+625,General Consultant,496,Engineer
+626,Contract Assistant,497,Legal Professional
+627,Control Room Engineer,498,Engineer
+628,Cook,499,Cook/Chef
+629,Cook Helper,500,Cook/Chef
+630,Research Fellow,501,Scientist & Researcher
+631,Coordinator,501,Management and Supervisory Role
+632,General Coordinator,501,Management and Supervisory Role
+633,Core Worker,502,General worker
+634,Core Maker,502,Factory & Manufacturing Worker
+635,Counterhand Assistant,503,Warehouse and Store Worker
+636,Craftsman,504,Craftsman
+637,Crew,505,General worker
+638,Crew Restaurant,505,Cook/Chef
+639,Cutter,506,Factory & Manufacturing Worker
+640,Grass cutter,506,Factory & Manufacturing Worker
+641,D/T,507,Technician & Maintenance Worker
+642,Kansai W/Band Operator,508,Factory & Manufacturing Worker
+643,Decoration Furniture,509,Carpenter
+644,Delivery Boy/Man,510,Driver/Vehicle Operator
+645,Delivery Man,510,Driver/Vehicle Operator
+646,Food Delivery Worker,510,Driver/Vehicle Operator
+647,Denter,511,Automobile Worker
+648,Denting Technician,512,Automobile Worker
+649,Designer,513,Creative/Arts
+650,Furniture Designer,513,Creative/Arts
+651,Diagnostic Radiologist,514,Doctor & Healthcare Worker
+652,Diesel Engine Operator,515,Driver/Vehicle Operator
+653,Diesel Mechanic,516,Automobile Worker
+654,Digging Operator,517,Driver/Vehicle Operator
+655,Editing Director,518,Media / Entertainment
+656,Admin Director,518,Management and Supervisory Role
+657,ASST. General Dir,518,Management and Supervisory Role
+658,Director,518,Management and Supervisory Role
+659,General Director,518,Management and Supervisory Role
+660,Managing Director,518,Management and Supervisory Role
+661,Distributer,519,Salesperson
+662,Document Controller,520,Management and Supervisory Role
+663,Documentation Assistant,521,Management and Supervisory Role
+664,Double Needle Operator,522,Welder and fabricator
+665,Drainage Nets Technician,523,Plumber
+666,Drawing machine operator,524,Construction Worker
+667,Dry Cleaner,525,Cleaner
+668,Duct Fabricator,526,Refrigeration & Air-conditioning
+669,Duct Foreman,527,Construction Worker
+670,Duct Insulator,528,Refrigeration & Air-conditioning
+671,Duct Man,529,Refrigeration & Air-conditioning
+672,Ductless Glands Specialist,530,Doctor & Healthcare Worker
+673,Dump Operator,531,Driver/Vehicle Operator
+674,ELV. Electric Technician,532,Electrician
+675,Economics Teacher,533,Teacher
+676,Elect. Mech. Compress Technician,534,Refrigeration & Air-conditioning
+677,Sewage Pipelayer,535,Plumber
+678,Elect. Mech. Sewage Technician,535,Factory & Manufacturing Worker
+679,Electrical And Electronics Engineer,536,Engineer
+680,Electrical Engineer,537,Engineer
+681,Electrical Foreman,538,Electrician
+682,Electrical Supervisor,539,Electrician
+683,Electrical Power Labour,540,Electrician
+684,Electrical(Ext) Helper,540,Electrician
+685,Electrician / Electrical Technician,541,Electrician
+686,Electrician(Distribution Board),542,Electrician
+687,Electronic Technician,543,Electrician
+688,Electronic Telephone Maintenance,544,Electrician
+689,Electronics Supervisor,545,Electrician
+690,Geotechnical Engineer,546,Textile Worker
+691,Development Manager,546,Management and Supervisory Role
+692,Duty Manager,546,Management and Supervisory Role
+693,Floor Manager,546,Management and Supervisory Role
+694,Human Resource Manager,546,Management and Supervisory Role
+695,Assistant Engineer,546,Engineer
+696,DECOR ENGINEER,546,Engineer
+697,Engineer,546,Engineer
+698,Engineer all specializations,546,Engineer
+699,Equipments Engineer,546,Electrician
+700,Eqiupment Mechanic Grade-A,547,Automobile Worker
+701,Eqiupment Mechanic Grade-B,548,Automobile Worker
+702,Equipment Operator,549,Driver/Vehicle Operator
+703,Equipment Technician,550,Electrician
+704,Erector,551,Construction Worker
+705,Estimator,552,Management and Supervisory Role
+706,Excavator Operator,553,Driver/Vehicle Operator
+707,Executing huttonholes and keys with automatic machines,554,Welder and fabricator
+708,Executing over lock stitching,555,Welder and fabricator
+709,Execution of Pockets with automatic Machines,556,Automobile Worker
+710,Executive Chef,557,Cook/Chef
+711,Fabric Cutter,558,Welder and fabricator
+712,Fabricator,558,Welder and fabricator
+713,Feed of the arm Operator,559,Welder and fabricator
+714,Female Teacher(Biology),561,Teacher
+715,Female Teacher(Physics),562,Teacher
+716,Field Engineer,563,Engineer
+717,Final iron pressing(On pressing table),564,Textile Worker
+718,Final pressing(with pressing machines),565,Textile Worker
+719,Finising Forman,566,Construction Worker
+720,Fire System Technician,567,Technician & Maintenance Worker
+721,GIB Board Fixer,568,General worker
+722,Fixing collars,569,Textile Worker
+723,Fixing shoulder pads and sleeves with automatic machines,570,Factory & Manufacturing Worker
+724,Flatlock Machine Operator,571,Welder and fabricator
+725,Forman(Civil),572,Construction Worker
+726,Formworks installer(Skilled),573,Construction Worker
+727,Formworks installer(unskilled),574,Construction Worker
+728,Foundry And Pattern Maker,575,Cook/Chef
+729,Fuel Operator,576,Fuel Filling Station Worker
+730,Fuel Truck Transport,577,Driver/Vehicle Operator
+731,Furniture Upholsterer,578,Carpenter
+732,G.R.C.,579,Welder and fabricator
+733,G.R.P.,580,Welder and fabricator
+734,Galvanizer,581,Painter
+735,Gang Leader,582,Fuel Filling Station Worker
+736,Garments Packer (Male),583,Textile Worker
+737,Gen. Surgery Specialist,584,Doctor & Healthcare Worker
+738,General Surgery Specialist,584,Doctor & Healthcare Worker
+739,Gen. Internal Specialist,585,Doctor & Healthcare Worker
+740,Gen. Transf. Supervisor,586,Logistics
+741,Builder,587,Construction Worker
+742,General Builder,587,Construction Worker
+743,Master Builder,587,Construction Worker
+744,General Details Visitor,588,Management and Supervisory Role
+745,General Labour,589,General worker
+746,Stock Filler,590,Warehouse and Store Worker
+747,Scaffloder,590,Scaffolding and Metal Worker
+748,Quarrying Laboure,590,Mining Worker
+749,Executive,590,Management and Supervisory Role
+750,General/SemiSkill,590,General worker
+751,Team Member,590,General worker
+752,Insurance Agent,590,Finance & Accounting
+753,Packer,590,Factory & Manufacturing Worker
+754,Model Maker,590,Craftsman
+755,Food cart preparator,590,Cook/Chef
+756,Generator Operator,591,Electrician
+757,Generator Technician,592,Engineer
+758,Germents Manufacturing,593,Construction Worker
+759,Goldsmith,594,Driver/Vehicle Operator
+760,Grader Operator,595,Creative/Arts
+761,Graphic Designer,596,Creative/Arts
+762,Graphics And Animation,596,Agriculture
+763,Guide,597,Craftsman
+764,Gymsum Carving,598,Doctor & Healthcare Worker
+765,HSE Manager,599,Hotel and Tourism Worker
+766,HVAC Supervisor,600,Refrigeration & Air-conditioning
+767,HVAC Technician,601,Refrigeration & Air-conditioning
+768,Hand Presser,602,Textile Worker
+769,Head Waiter,603,Hotel and Tourism Worker
+770,Heavy Eqiupment Mechanic,604,Technician & Maintenance Worker
+771,Heavy Trunk Mechanic,605,Technician & Maintenance Worker
+772,Heavy Vehicle Operator,606,Driver/Vehicle Operator
+773,Heavy Viehcle Driver,607,Driver/Vehicle Operator
+774,High-Volt Electrician,608,Electrician
+775,Horticulture Supervisor,609,Agriculture
+776,Hotel Boy,610,Hotel and Tourism Worker
+777,Industrial,613,Factory & Manufacturing Worker
+778,Industry Equipment Technician,614,Technician & Maintenance Worker
+779,Infections Disease Specialist,615,Doctor & Healthcare Worker
+780,Information Technology Engineer,616,IT
+781,Injection Technician,617,Factory & Manufacturing Worker
+782,Insect Specialist,618,Scientist & Researcher
+783,Insects Specialist,618,Scientist & Researcher
+784,Lift & Escalator Installer,619,Technician & Maintenance Worker
+785,Pipe Installer,619,Plumber
+786,Installer,619,Carpenter
+787,Instructor,620,Teacher
+788,Insulator,621,Refrigeration & Air-conditioning
+789,Composite Special Insulation Materials,621,Construction Worker
+790,Technical Intern Training,622,Teacher
+791,Internist,622,Doctor & Healthcare Worker
+792,Interphase iron pressing on pressing table,623,Textile Worker
+793,Interpreter,624,Others
+794,Irrigation Technician,625,Agriculture
+795,Janitress,626,Cleaner
+796,Jewlery Maker,627,Craftsman
+797,Kansai Machine Operator,628,Factory & Manufacturing Worker
+798,Laboratory Assistant,629,Technician & Maintenance Worker
+799,Ledger,630,Finance & Accounting
+800,Laminator,631,Technician & Maintenance Worker
+801,Landcsaping Technician,632,Agriculture
+802,Language Teacher,633,Teacher
+803,Lathe Machine Operator,634,Factory & Manufacturing Worker
+804,Laundry Manager,635,Management and Supervisory Role
+805,Layer Man,636,Construction Worker
+806,Lead Chemist,637,Scientist & Researcher
+807,Lead Maintenance Engineer,638,Engineer
+808,Less Skilled Technician,639,Electrician
+809,Lift Supervisor,640,Construction Worker
+810,Lineman,641,Electrician
+811,Linking Operator (Female),642,Factory & Manufacturing Worker
+812,Linking Operator (Male),643,Plumber
+813,Locksmith,644,Logistics
+814,Lunch Delivery Staff,645,Logistics
+815,M E Worker (Unskilled),646,Factory & Manufacturing Worker
+816,M E Worker(Skilled),647,Electrician
+817,MEP Coordinator,648,Plumber
+818,Machine Operator(Female),649,Factory & Manufacturing Worker
+819,Machine Technician,650,Technician & Maintenance Worker
+820,Machinist,651,Technician & Maintenance Worker
+821,Machinist Flatlock,652,Welder and fabricator
+822,Machinist Interlock,653,Technician & Maintenance Worker
+823,Maintenance and System Support,654,Technician & Maintenance Worker
+824,Maintenance Planning Assistant,655,Management and Supervisory Role
+825,Maintenance Technicians,656,Electrician
+826,Male Security(A-Grade),657,Security Worker
+827,Male Teacher(Physics),658,Teacher
+828,Male teacher(Biology),659,Teacher
+829,Management Information System,660,Management and Supervisory Role
+830,Information Technology Manager,660,IT
+831,Training Manager,661,Teacher
+832,Purchasing Manager,661,Warehouse and Store Worker
+833,Admin Manager,661,Management and Supervisory Role
+834,Administration Manager,661,Management and Supervisory Role
+835,Company/Factory Manager,661,Management and Supervisory Role
+836,Contracts Manager,661,Management and Supervisory Role
+837,Executive Manager,661,Management and Supervisory Role
+838,Maintenance Manager,661,Management and Supervisory Role
+839,Manager,661,Management and Supervisory Role
+840,Policy and Planning Manager,661,Management and Supervisory Role
+841,Retail Store Manager,661,Management and Supervisory Role
+842,Store Manager,661,Management and Supervisory Role
+843,Technical Manager,661,Management and Supervisory Role
+844,Transportation Manager,661,Management and Supervisory Role
+845,Logistics Manager,661,Logistics
+846,Hotel Manager,661,Hotel and Tourism Worker
+847,Accounts Manager,661,Finance & Accounting
+848,Finance manager,661,Finance & Accounting
+849,Insurance Manager,661,Finance & Accounting
+850,INTERNAL AUDITING MANAGER,661,Finance & Accounting
+851,Plant Manager,661,Engineer
+852,Transport bike operator,661,Driver/Vehicle Operator
+853,Kitchen Manager,661,Cook/Chef
+854,Restaurant Manager,661,Cook/Chef
+855,Manicurist,662,Barber & Beautician
+856,Manufacturing,663,Factory & Manufacturing Worker
+857,Manufacturing Officer,663,Factory & Manufacturing Worker
+858,Marable Mason,664,Mason
+859,Marble Technician,665,Construction Worker
+860,Markers,666,Salesperson
+861,Digital Marketing Executive,667,Management and Supervisory Role
+862,Marketing Executive/Marketing Manager,667,Management and Supervisory Role
+863,Mason (Charge Hand),668,Mason
+864,Mason(Breacks),669,Mason
+865,Mason(Mixer),670,Mason
+866,Mason(Plaster/Block),671,Mason
+867,Mason(Roof Insulation),672,Mason
+868,Material Assistant,673,Management and Supervisory Role
+869,Material Controller,674,Logistics
+870,Material Dump Truck Transport,675,Driver/Vehicle Operator
+871,Math Teacher,676,Teacher
+872,Matrix Designing Technician,677,Technician & Maintenance Worker
+873,Matrix Technician,678,Technician & Maintenance Worker
+874,Mechanic Stationary Grade-A,679,Technician & Maintenance Worker
+875,Mechanic Stationary Grade-B,680,Technician & Maintenance Worker
+876,Mechanical Supervisor,681,Technician & Maintenance Worker
+877,Mechanical Technician(Amonia Storage),682,Technician & Maintenance Worker
+878,Mechanical Technician(Amonia),683,Technician & Maintenance Worker
+879,Mechanical Technician(Compressor),684,Technician & Maintenance Worker
+880,Mechanical Technician(Maintenance),685,Technician & Maintenance Worker
+881,Mechanical Technician(Material),686,Technician & Maintenance Worker
+882,Mechanical Technician(Workshop),687,Technician & Maintenance Worker
+883,Mechanics,688,Technician & Maintenance Worker
+884,Mechanist Grade-A,689,Technician & Maintenance Worker
+885,Mechanist Grade-B,690,Technician & Maintenance Worker
+886,Medics,691,Doctor & Healthcare Worker
+887,Mess Attendent,692,Management and Supervisory Role
+888,Metal Board Fixer,693,Carpenter
+889,Metal Door Fixer,694,Carpenter
+890,Metal Melters Reheater,695,Scaffolding and Metal Worker
+891,Metal Stamping,696,Scaffolding and Metal Worker
+892,Metallurgical Engineering,697,Engineer
+893,Microbiology,698,Scientist & Researcher
+894,Mid Wife,699,Doctor & Healthcare Worker
+895,Milker,700,Agriculture
+896,Millwright,701,Technician & Maintenance Worker
+897,Mixer Man,702,Construction Worker
+898,Raw Material Handler,703,General worker
+899,Mixing Raw Material Technician,703,Cleaner
+900,Moulder,704,Construction Worker
+901,Moulding maker,705,Construction Worker
+902,NEO Specialist,706,Doctor & Healthcare Worker
+903,Neurologist,707,Doctor & Healthcare Worker
+904,Network Administration,708,IT
+905,Nurse(Female),709,Nurse
+906,Occupational Safety Technician,710,Technician & Maintenance Worker
+907,Office Automation Technicians,711,Technician & Maintenance Worker
+908,Office Engineer,712,Engineer
+909,Commercial Officer,713,Management and Supervisory Role
+910,HR Officer,713,Management and Supervisory Role
+911,Office Manger,713,Management and Supervisory Role
+912,Officer,713,Management and Supervisory Role
+913,Operations Officer,713,Management and Supervisory Role
+914,Oil Salesman,714,Salesperson
+915,Operation Manager,715,Management and Supervisory Role
+916,Operation Technician,716,Technician & Maintenance Worker
+917,"Operation executed with sew and cut Machines(collar,margins,flaps)",717,Textile Worker
+918,Operations executed with simple linear machines,718,Textile Worker
+919,Operator,719,Factory & Manufacturing Worker
+920,Power Lines Operator,719,Electrician
+921,Crusher Operator,719,Driver/Vehicle Operator
+922,Pile Driver Operator,719,Driver/Vehicle Operator
+923,Mobile PestÂ SprayingÂ EquipmentÂ Operator,719,Agriculture
+924,Ophthalmologist,720,Doctor & Healthcare Worker
+925,Orchard Solding,721,Agriculture
+926,Orderly(CSU),722,Doctor & Healthcare Worker
+927,Orderly(Med),723,Doctor & Healthcare Worker
+928,Orthopedics,724,Doctor & Healthcare Worker
+929,Oven Operator,726,Cook/Chef
+930,Overlock Machine Operator,727,Cook/Chef
+931,Packing the shelves worker,728,Warehouse and Store Worker
+932,Packing Executive,728,Logistics
+933,Packing Technician,728,Factory & Manufacturing Worker
+934,Paper And Board Maker,729,Factory & Manufacturing Worker
+935,Pastry Maker,730,Cook/Chef
+936,Pathologist,731,Doctor & Healthcare Worker
+937,Patrolling Security(With valid UAE Driving License),732,Security Worker
+938,Pattern Maker,733,Textile Worker
+939,Pediatrician,734,Doctor & Healthcare Worker
+940,Performance Engineer,735,Engineer
+941,Technician pest control,736,Technician & Maintenance Worker
+942,Pest Control,736,Agriculture
+943,Pest ControlÂ Worker,736,Agriculture
+944,Pesticide Controller,736,Agriculture
+945,Pastry Chief,737,Cook/Chef
+946,Petrol Engine Mechanic,739,Technician & Maintenance Worker
+947,Photographer,740,Media / Entertainment
+948,Physics Teacher,741,Teacher
+949,Physiotherapist,742,Doctor & Healthcare Worker
+950,Piling Hand,743,Construction Worker
+951,Pipe Fitter,744,Plumber
+952,Planner,745,Management and Supervisory Role
+953,Planning Engineer,746,Management and Supervisory Role
+954,Planter,747,Agriculture
+955,Gypsum Worker,748,Factory & Manufacturing Worker
+956,Plaster,748,Construction Worker
+957,Plaster Mason,749,Construction Worker
+958,Plastic Machine Operator,750,Factory & Manufacturing Worker
+959,Plater,751,Factory & Manufacturing Worker
+960,Plating Team Leader,752,Factory & Manufacturing Worker
+961,Playing Technician,753,Technician & Maintenance Worker
+962,Plumbing Foreman,754,Plumber
+963,Pluming Serviceman,755,Plumber
+964,Poultry Breeder,758,Agriculture
+965,Poultry Man,758,Agriculture
+966,Power Station Technician,759,Technician & Maintenance Worker
+967,Power Cable Connector,759,Electrician
+968,Practitioners F,760,Management and Supervisory Role
+969,Practitioners M,761,Management and Supervisory Role
+970,Pressing,762,Textile Worker
+971,Pressing zone chef in charge,763,Textile Worker
+972,Process Operator (Ammonia),764,Factory & Manufacturing Worker
+973,Process Technician,765,Technician & Maintenance Worker
+974,Process Maintenance and ConstructionÂ Worker,765,Construction Worker
+975,Production Operator,766,Technician & Maintenance Worker
+976,Production Operator (Male),767,Factory & Manufacturing Worker
+977,Products Qualify Control Engineer,768,Management and Supervisory Role
+978,Professional Body Governing,769,Management and Supervisory Role
+979,Program Officer,770,Management and Supervisory Role
+980,Programmer,771,Engineer
+981,Public Relation Officer,772,Management and Supervisory Role
+982,Pump Operator,773,Fuel Filling Station Worker
+983,Pumps Technician,774,Fuel Filling Station Worker
+984,Purchase Assistant,775,Warehouse and Store Worker
+985,Purchasing Representative,775,Warehouse and Store Worker
+986,Purchase Manager,776,Warehouse and Store Worker
+987,Purchaser,776,Warehouse and Store Worker
+988,QA/QC Engineer,777,Engineer
+989,QA/QC Inspector,778,Quality Control Professional
+990,Quality Checker,779,Quality Control Professional
+991,Checker(QA),779,Factory & Manufacturing Worker
+992,Quality Control,780,Quality Control Professional
+993,Quality Control Manager,780,Quality Control Professional
+994,Quality Controller,780,Quality Control Professional
+995,Quantity Surveyor,781,Construction Worker
+996,RO Plant Technician,782,Technician & Maintenance Worker
+997,Radiologist,783,Doctor & Healthcare Worker
+998,Reinforcing,784,Construction Worker
+999,Rebar Worker,785,Construction Worker
+1000,Rebar,786,Construction Worker
+1001,Recreation Tutor,787,Teacher
+1002,Refrigeration Engineer,788,Refrigeration & Air-conditioning
+1003,Repairer,789,Automobile Worker
+1004,Representitive,790,Salesperson
+1005,Respiratory Technician,791,Nurse
+1006,Rider,792,Driver/Vehicle Operator
+1007,Rigger,793,Construction Worker
+1008,Rigger Grade-A,794,Construction Worker
+1009,Rigger Grade-B,795,Construction Worker
+1010,Rigger Team Leader,796,Construction Worker
+1011,Rivet and Button Operator,797,Construction Worker
+1012,Road Equipment Driver,798,Driver/Vehicle Operator
+1013,Road Equipment Technician,799,Technician & Maintenance Worker
+1014,Road Paving,800,Construction Worker
+1015,Roller Operator,801,Driver/Vehicle Operator
+1016,Room Boy,802,Hotel and Tourism Worker
+1017,Rotating Mechanic Grade-A,803,Technician & Maintenance Worker
+1018,Rotating Mechanic Grade-B,804,Technician & Maintenance Worker
+1019,Construction Carpenter,805,Carpenter
+1020,Rough Carpenter,805,Carpenter
+1021,Safety Controller,806,Security Worker
+1022,Safety Engineer,807,Engineer
+1023,Sample Maker Polyvalent,808,Engineer
+1024,Sandblaster,809,Cleaner
+1025,Scaffolder Grade-A,810,Scaffolding and Metal Worker
+1026,Scaffolder Grade-B,811,Scaffolding and Metal Worker
+1027,Scarf Folder,812,Construction Worker
+1028,Scassolder,813,Construction Worker
+1029,Schedular,814,Management and Supervisory Role
+1030,Scientist,815,Scientist & Researcher
+1031,Company Secretary,816,Management and Supervisory Role
+1032,Secretary,816,Management and Supervisory Role
+1033,Semi Skilled Technician,818,Technician & Maintenance Worker
+1034,Senior Engineer,819,Engineer
+1035,Senior Maint. Technicians,820,Technician & Maintenance Worker
+1036,Senior QA Inspector,821,Management and Supervisory Role
+1037,Senior Seaman,822,Shipping Work
+1038,Technical Assistant,823,Technician & Maintenance Worker
+1039,Shop Assistant,823,Warehouse and Store Worker
+1040,Service Assistant,823,Others
+1041,Health Care Assistant,823,Nurse
+1042,Personal Assistant,823,Management and Supervisory Role
+1043,Service Management Specialist,823,Management and Supervisory Role
+1044,Service Assistant,823,House Keeper
+1045,Stitching Machine Operator,824,Welder and fabricator
+1046,Sewer,824,Textile Worker
+1047,Sewing Operator(Female),825,Welder and fabricator
+1048,Sewing line chef in charge,826,Welder and fabricator
+1049,Sewing Specialist,826,Welder and fabricator
+1050,Sheet Metal Worker,827,Welder and fabricator
+1051,Metal Worker,827,Scaffolding and Metal Worker
+1052,Shift Charge Engineer,828,Engineer
+1053,Shift Chemist,829,Scientist & Researcher
+1054,Ship Breaker,830,Scaffolding and Metal Worker
+1055,Ship Building Engineer,831,Engineer
+1056,Ship Out Fitting Supervisor,832,Management and Supervisory Role
+1057,Shooter,833,General worker
+1058,Shovel Operator,834,Driver/Vehicle Operator
+1059,Siler Assistant,835,Warehouse and Store Worker
+1060,Singer,837,Creative/Arts
+1061,Single Needle Operator,838,Welder and fabricator
+1062,Commercial Broker,839,Finance & Accounting
+1063,Site Agent,839,Construction Worker
+1064,Site Engineer,840,Engineer
+1065,Skilled Labour,841,General worker
+1066,Skimmers,842,Cleaner
+1067,Smith / Black Smith,843,Factory & Manufacturing Worker
+1068,Software designer,845,Engineer
+1069,Software Engineer,845,Engineer
+1070,Sorter Operator,846,Driver/Vehicle Operator
+1071,Staff,848,General worker
+1072,Stagers,849,Creative/Arts
+1073,Staging Team Leader,850,Creative/Arts
+1074,Steam Presser,851,Textile Worker
+1075,Steel Fixer(unskilled),852,Scaffolding and Metal Worker
+1076,Sterilization Technician,853,Cleaner
+1077,Steward,854,Hotel and Tourism Worker
+1078,Steward Captain,855,Management and Supervisory Role
+1079,Still Structure Fabricator,856,Welder and fabricator
+1080,Stone Man,857,Mason
+1081,Stone Care Helper,858,Mason
+1082,Stone Worker,858,Mason
+1083,Structural Fabricators,859,Welder and fabricator
+1084,Studio Worker,861,Creative/Arts
+1085,Substation Supervisor,862,Management and Supervisory Role
+1086,Substation Supervisor,862,Management and Supervisory Role
+1087,Superintendent,863,Management and Supervisory Role
+1088,Hostel Warden,863,Hotel and Tourism Worker
+1089,Sewing Supervisor,864,Welder and fabricator
+1090,Metal production process supervisor,864,Scaffolding and Metal Worker
+1091,Quality Control Supervisor,864,Management and Supervisory Role
+1092,Supervisor,864,Management and Supervisory Role
+1093,Packing Supervisor,864,Factory & Manufacturing Worker
+1094,Assistant Supervisor (Construction Trade),864,Construction Worker
+1095,Supervisor(Electrical),865,Electrician
+1096,Supervisor(Female),866,Management and Supervisory Role
+1097,Supervisor(Finishing),867,Management and Supervisory Role
+1098,Supervisor(Instrument),868,Technician & Maintenance Worker
+1099,Office Supervisor,869,Management and Supervisory Role
+1100,Supervisor(Operation),869,Management and Supervisory Role
+1101,Supervisor(Planning),870,Management and Supervisory Role
+1102,Supervisor(Store),871,Warehouse and Store Worker
+1103,Sales Supervisor,871,Salesperson
+1104,Civil Supervisor,872,Construction Worker
+1105,Supervisor(civil),872,Construction Worker
+1106,Supplier(Building Material),873,Salesperson
+1107,Swarma Maker,874,Cook/Chef
+1108,Surveyor,875,Management and Supervisory Role
+1109,Electrical Surveyor,875,Electrician
+1110,Swash Chef,876,Cook/Chef
+1111,Swing Line Helper(Female),879,Welder and fabricator
+1112,Systems Analyst,880,Engineer
+1113,Systems Designer,881,Engineer
+1114,T/T Erector,882,Telecommunication
+1115,T/T Lineman,883,Telecommunication
+1116,Technician Copper,884,Technician & Maintenance Worker
+1117,TT Sorter,885,Factory & Manufacturing Worker
+1118,TTE F/M,886,Telecommunication
+1119,TTL F/M,887,Telecommunication
+1120,Tamer,888,Agriculture
+1121,Tank Truck Transport,889,Driver/Vehicle Operator
+1122,Tannery Operation,890,Factory & Manufacturing Worker
+1123,Tea Boy,891,Hotel and Tourism Worker
+1124,Technician,892,Technician & Maintenance Worker
+1125,Technical Executive,892,Management and Supervisory Role
+1126,Product Quality Control Technician,892,Factory & Manufacturing Worker
+1127,Lighting Technician,892,Electrician
+1128,Technician Helper,893,Technician & Maintenance Worker
+1129,Technician(female),894,Technician & Maintenance Worker
+1130,Telecom Labour,895,Telecommunication
+1131,Telecom Technician,895,Telecommunication
+1132,Telecommunication Assistant,895,Telecommunication
+1133,Telecommunication Clerk,895,Telecommunication
+1134,Telephone Line Man,896,Telecommunication
+1135,Thermal Treatments Technician,897,Refrigeration & Air-conditioning
+1136,Tiles Marble,899,Construction Worker
+1137,Tiles Ceramic,900,Construction Worker
+1138,Tinker,901,Scaffolding and Metal Worker
+1139,Trades Foreman,902,Construction Worker
+1140,Tradesman,902,Construction Worker
+1141,Training Engineer,903,Engineer
+1142,Transf. Equip. Technician,904,Technician & Maintenance Worker
+1143,Tree Climber,905,Agriculture
+1144,Tundory Maker,906,Cook/Chef
+1145,Turner,907,Factory & Manufacturing Worker
+1146,Tyre Man,908,Automobile Worker
+1147,Ultrasound(male),909,Doctor & Healthcare Worker
+1148,Upholsterer,910,Welder and fabricator
+1149,Urine Surgery Specialist,911,Doctor & Healthcare Worker
+1150,Waitress,912,Cook/Chef
+1151,Ward Boy,913,Nurse
+1152,Curtain washer,914,Cleaner
+1153,Mobile Vehicle Washing Worker,914,Cleaner
+1154,Roofs Cleaner,914,Cleaner
+1155,Washer,914,Cleaner
+1156,Truck Washer,915,Cleaner
+1157,Washers,915,Cleaner
+1158,Watchman,916,Security Worker
+1159,Water Purifying Chemist,917,Scientist & Researcher
+1160,Water Treatment Operator,918,Technician & Maintenance Worker
+1161,Water Tanks Cleaner,919,Cleaner
+1162,Welder Grade-A,920,Welder and fabricator
+1163,Welder Grade-B,921,Welder and fabricator
+1164,Welding Foreman,922,Welder and fabricator
+1165,Welding Supervisor,923,Welder and fabricator
+1166,Wheel Loader Driver,924,Driver/Vehicle Operator
+1167,Winders Operator (Male),925,Factory & Manufacturing Worker
+1168,Wood Designer,926,Carpenter
+1169,Manual Or Mechanical Sewing Worker,927,Welder and fabricator
+1170,Shelving Worker,927,Warehouse and Store Worker
+1171,Hand Sewer,927,Textile Worker
+1172,Looping Worker,927,Textile Worker
+1173,Carrier,927,Others
+1174,Conservancy Worker,927,Others
+1175,Upload and Download Worker,927,IT
+1176,Support worker,927,House Keeper
+1177,General Worker,927,General worker
+1178,Personal Worker,927,General worker
+1179,Unique occupation worker,927,General worker
+1180,Cardboard Assembly Worker,927,Factory & Manufacturing Worker
+1181,Graves worker,927,Factory & Manufacturing Worker
+1182,Labeling worker,927,Factory & Manufacturing Worker
+1183,Packaging Worker,927,Factory & Manufacturing Worker
+1184,Packing and Wraping Worker,927,Factory & Manufacturing Worker
+1185,Print Binding & Finishing Worker,927,Factory & Manufacturing Worker
+1186,Product Sorting Worker,927,Factory & Manufacturing Worker
+1187,Worker,927,Factory & Manufacturing Worker
+1188,Transport Workers,927,Driver/Vehicle Operator
+1189,Vegetable and Fruits Packaging and Packing,927,Cook/Chef
+1190,Asphalting Worker,927,Construction Worker
+1191,Building Maintenance Worker,927,Construction Worker
+1192,Demolishing Worker,927,Construction Worker
+1193,Drilling worker,927,Construction Worker
+1194,Reclamation Worker,927,Construction Worker
+1195,Wheelbarrow worker,927,Construction Worker
+1196,Childcare Worker,927,Caregiver
+1197,Agriculture Worker,927,Agriculture
+1198,Animal farm Worker,927,Agriculture
+1199,Farm Worker,927,Agriculture
+1200,Fish Farm Worker,927,Agriculture
+1201,Garden Clean Worker,927,Agriculture
+1202,Landscape Maintenance Worker,927,Agriculture
+1203,Livestock's Worker,927,Agriculture
+1204,Oil Palm Plantation Workers,927,Agriculture
+1205,X-Ray Technician,928,Nurse
+1206,H/E Engine,929,Factory & Manufacturing Worker
+1207,H/EU/Chassis,930,Barber & Beautician
+1208,Lathe,931,Technician & Maintenance Worker
+1209,Tire,932,Automobile Worker
+1210,CPE Operator,933,IT
+1211,Procurement Engineer,936,Engineer
+1212,Assistant Store Keeper,938,Warehouse and Store Worker
+1213,Time keeping Clerk,939,Management and Supervisory Role
+1214,Safety Inspector,940,Security Worker
+1215,Civil Supervisor,941,Construction Worker
+1216,Highly skilled MEchanical/Electrical Workers,942,Electrician
+1217,Skilled Mechanical/Electrical Workers,943,Factory & Manufacturing Worker
+1218,Semi Skilled Mechanical/Electrical Workers,944,Electrician
+1219,Spinning Technician,945,Technician & Maintenance Worker
+1220,Weaving Tech,946,Technician & Maintenance Worker
+1221,Mechanical Engineer Water,947,Engineer
+1222,Senior Technician Water,948,Technician & Maintenance Worker
+1223,Lead I and C Engineer,949,Engineer
+1224,Dcs Engineer,950,Engineer
+1225,I and C Engineer,951,IT
+1226,Senior DCS Tech,952,Technician & Maintenance Worker
+1227,Lead Electrical Engineer,953,Engineer
+1228,Senior Tech. Protection,954,Technician & Maintenance Worker
+1229,Commercial and Performance Engineer,956,Engineer
+1230,CCR Operator P and W,957,Technician & Maintenance Worker
+1231,Senior I and C Tech,958,Technician & Maintenance Worker
+1232,Civil Engineering Technician,959,Construction Worker
+1233,Core Technician,960,Technician & Maintenance Worker
+1234,Maintenance Mechanic Assistant,961,Technician & Maintenance Worker
+1235,A Casual Worker,962,General worker
+1236,Professional Armed Carpenter,963,Security Worker
+1237,Technical Haddad Armed,964,Welder and fabricator
+1238,Construction Technician,965,Construction Worker
+1239,Technician to his despair,966,Technician & Maintenance Worker
+1240,Art Tile,967,Media / Entertainment
+1241,Technical Coating,968,Technician & Maintenance Worker
+1242,Technical mourning doors and windows,969,Welder and fabricator
+1243,Technical Haddad doors and windows,970,Welder and fabricator
+1244,Art graphite,971,Creative/Arts
+1245,Guest Relation Officer,972,Hotel and Tourism Worker
+1246,Reservation Agent,973,Hotel and Tourism Worker
+1247,Guest Services Agent,974,Hotel and Tourism Worker
+1248,Doorman,975,Security Worker
+1249,Bellman,976,Hotel and Tourism Worker
+1250,Butler/Host,977,Hotel and Tourism Worker
+1251,Domestic Helper,978,House Keeper
+1252,Housekeeping Attendant,978,House Keeper
+1253,Commis Waiter/Waitress,979,Hotel and Tourism Worker
+1254,Kitchen Helper,980,Cook/Chef
+1255,Kitchen Steward,980,Cook/Chef
+1256,Massage/Beauty Therapist,981,Barber & Beautician
+1257,Childrens Hostess,983,Caregiver
+1258,Sports Organizer,984,Management and Supervisory Role
+1259,Life Guard,985,Security Worker
+1260,Skilled Worker,986,General worker
+1261,Semi Skilled Worker,987,General worker
+1262,Behind Cashier,988,Warehouse and Store Worker
+1263,Recorders,989,Management and Supervisory Role
+1264,Loaders,990,Loading Unloading Labor
+1265,Metal Painter,991,Scaffolding and Metal Worker
+1266,Loader,993,Loading Unloading Labor
+1267,AC Technicain,994,Refrigeration & Air-conditioning
+1268,Chiller Technician,995,Refrigeration & Air-conditioning
+1269,Electro-Mechanical Technician,996,Automobile Worker
+1270,BMS Operator,997,Technician & Maintenance Worker
+1271,BMS Technician,998,Technician & Maintenance Worker
+1272,Mep Multi Technician,999,Technician & Maintenance Worker
+1273,Civil Multi Technician,1000,Construction Worker
+1274,Work Team Leader,1001,Management and Supervisory Role
+1275,Electrician Assistant,1002,Electrician
+1276,Mechanic Assistant,1003,Factory & Manufacturing Worker
+1277,Welder Assistant,1004,Welder and fabricator
+1278,Hull Fitter,1005,Shipping Work
+1279,Tiler,1006,Construction Worker
+1280,Waterproof Construction,1007,Construction Worker
+1281,Waterproofing Technician,1007,Construction Worker
+1282,Metal press processing,1008,Scaffolding and Metal Worker
+1283,Mining and Quarrying,1010,Mining Worker
+1284,Mining Engineer,1010,Engineer
+1285,Shelf Filler,1011,Warehouse and Store Worker
+1286,Handler Cargo,1012,Loading Unloading Labor
+1287,Cementer,1013,Construction Worker
+1288,Collector Scrap,1014,Others
+1289,Neuro Nurse,1015,Nurse
+1290,ICU Nurse,1016,Nurse
+1291,CCU Nurse,1017,Nurse
+1292,Neonatal Nurse,1018,Nurse
+1293,Dialysis Nurse,1019,Nurse
+1294,Rehabilitation Nurse,1020,Nurse
+1295,Physiotherapy Specialist,1021,Doctor & Healthcare Worker
+1296,Pediatric Nurse,1022,Nurse
+1297,Kidney Specialist,1023,Doctor & Healthcare Worker
+1298,Internal Medicine Specialist,1024,Doctor & Healthcare Worker
+1299,Obstetrics & Gynecology Specialist,1025,Doctor & Healthcare Worker
+1300,Tumors Specialist,1026,Doctor & Healthcare Worker
+1301,ENT Specialist,1027,Doctor & Healthcare Worker
+1302,General Practitioner (GP),1028,Doctor & Healthcare Worker
+1303,OT Nurses,1029,Nurse
+1304,Tower Fixing Technician,1030,Technician & Maintenance Worker
+1305,Optical Fiber Technician,1031,Technician & Maintenance Worker
+1306,Communication Network Technician,1032,Technician & Maintenance Worker
+1307,A Builder,1033,Construction Worker
+1308,Structural fitter,1034,Construction Worker
+1309,Structural Welder,1035,Welder and fabricator
+1310,Structural foreman,1036,Construction Worker
+1311,Garbage Truck Driver,1037,Driver/Vehicle Operator
+1312,Pickup Truck Driver,1038,Driver/Vehicle Operator
+1313,Vehicle Traffic Controller,1039,Security Worker
+1314,CO@ Welding,1040,Welder and fabricator
+1315,TIG Welding,1041,Welder and fabricator
+1316,Readymade Meal Processing,1042,Cook/Chef
+1317,Hospitality,1043,Management and Supervisory Role
+1318,Offset Printing,1044,Management and Supervisory Role
+1319,Formwork,1045,Construction Worker
+1320,Vehicle Clearer,1046,Cleaner
+1321,Electracal Power Labor,1047,Electrician
+1322,Electracal PowerÂ Labor,1047,Electrician
+1323,Telecom Labor,1048,Telecommunication
+1324,Electrical Main. Labor,1049,Electrician
+1325,Plantation Worker,1050,Agriculture
+1326,Resturant Crew,1051,Cook/Chef
+1327,Production Harvesting and Post Harvesting,1052,Agriculture
+1328,Delivery Bike Ryders,1053,Driver/Vehicle Operator
+1329,Delivery Ryders,1054,Driver/Vehicle Operator
+1330,Office and Platform Cleaner (Female),1055,Cleaner
+1331,Fast Food Prepared,1056,Cook/Chef
+1332,AC Technician Split Windows,1057,Refrigeration & Air-conditioning
+1333,AC Technician Central,1058,Refrigeration & Air-conditioning
+1334,Xerox Machine Technician,1059,Technician & Maintenance Worker
+1335,Electrical Generator Technician,1060,Electrician
+1336,CCTV Technician,1061,Technician & Maintenance Worker
+1337,Elevators Technician,1062,Electrician
+1338,Planters Technician,1063,Agriculture
+1339,Cleaner Team Leader,1064,Cleaner
+1340,Aircraft cleaner,1065,Airline Worker
+1341,Security Duard Female,1066,Security Worker
+1342,Syrup Maker,1067,Cook/Chef
+1343,Vehicle Polishing Worker,1068,Automobile Worker
+1344,ICT Business Analyst,1069,IT
+1345,Thread Permeation Dyeing Work,1070,Welder and fabricator
+1346,Customer Service,1071,Factory & Manufacturing Worker
+1347,Welding,1072,Welder and fabricator
+1348,Mig Welder 3g,1073,Welder and fabricator
+1349,Mig Welder Smaw CS,1074,Welder and fabricator
+1350,House Keeper Female,1075,House Keeper
+1351,Sample Man,1076,Welder and fabricator
+1352,Senior Staff Nurse,1077,Nurse
+1353,Auditor,1078,Finance & Accounting
+1354,Import Agent,1079,Salesperson
+1355,Partner,1080,Management and Supervisory Role
+1356,Food Inspector,1081,Hotel and Tourism Worker
+1357,Confectioner,1082,Cook/Chef
+1358,Waste collector,1083,Cleaner
+1359,Analyst,1084,Management and Supervisory Role
+1360,Business Support Analyst,1084,Management and Supervisory Role
+1361,Sailor,1085,Shipping Work
+1362,Process Control Specialist,1086,Management and Supervisory Role
+1363,Financial Controller,1087,Finance & Accounting
+1364,Shipyard Safety Assistant,1088,Security Worker
+1365,Fiberglass Specialist,1089,Technician & Maintenance Worker
+1366,Drilling Worker,1100,Construction Worker
+1367,Network Electrical Technician,1103,Telecommunication
+1368,Researcher,1104,Scientist & Researcher
+1369,Statistics Specialist,1105,Scientist & Researcher
+1370,Financial Analyzer,1106,Finance & Accounting
+1371,Investor,1107,Finance & Accounting
+1372,ICT Lines Installer,1108,IT
+1373,Expert,1109,Factory & Manufacturing Worker
+1374,Stevedore,1111,General worker
+1375,Collection Agent,1113,Finance & Accounting
+1376,Oiler and Greaser,1114,Factory & Manufacturing Worker
+1377,Vehicle's Oiler & Greaser,1114,Automobile Worker
+1378,Steeple Jack,1115,Cleaner
+1379,Chief Editor,1116,Media / Entertainment
+1380,Tinsmith,1117,Construction Worker
+1381,Soil Tester,1119,Scientist & Researcher
+1382,Fishery Processing,1124,Factory & Manufacturing Worker
+1383,Preparer,1125,General worker
+1384,Zookeeper,1126,Agriculture
+1385,Plantation Worker,1130,Management and Supervisory Role
+1386,Barbender,1131,Construction Worker
+1387,Logistic Controller,1132,Logistics
+1388,Joiner,1144,Carpenter
+1389,Finisher,1145,Carpenter
+1390,Construction Labour,1147,Construction Worker
+1391,Constraction Bricklayer,1150,Construction Worker
+1392,Female Lifegaurd,1153,Security Worker
+1393,Data Palm cleaner,1154,Agriculture
+1394,Cleaner High Level,1157,Cleaner
+1395,Rope Acces Level 2,1158,Construction Worker
+1396,Senior Kitchen Technician,1159,Cook/Chef
+1397,Assistant Technician,1160,Technician & Maintenance Worker
+1398,Joiner Carpenters,1164,Carpenter
+1399,Heavy operation,1168,Driver/Vehicle Operator
+1400,Palm Cutter,1171,Agriculture
+1401,Machine Operator-Landscape,1172,Driver/Vehicle Operator
+1402,Pipe Fitter Landscape,1173,Plumber
+1403,Multi Technician Facility Background,1174,Technician & Maintenance Worker
+1404,Foremen Interior & Joinery Background,1176,Management and Supervisory Role
+1405,Veneer Wood,1177,Carpenter
+1406,Machine Operator Wood Panel,1178,Factory & Manufacturing Worker
+1407,Machine Operator Weeden Spindle,1179,Factory & Manufacturing Worker
+1408,Corian Carpenter,1180,Carpenter
+1409,Supervisor Interior & Joinery Background,1181,Construction Worker
+1410,Beam Panel Saw Operator,1182,Factory & Manufacturing Worker
+1411,Vaneer Stiching Cutting Machine Operator,1183,Welder and fabricator
+1412,Edge band machine Operator,1184,Carpenter
+1413,Joinery polisher,1185,Construction Worker
+1414,Sanding worker,1186,Construction Worker
+1415,Joinery Touch up worker,1187,Carpenter
+1416,Solid Machine Operator,1188,Factory & Manufacturing Worker
+1417,Joinery Helper,1189,Construction Worker
+1418,Concrete Pressure Feeding,1190,Construction Worker
+1419,Metal Painting Work,1191,Scaffolding and Metal Worker
+1420,Steel bender,1192,Scaffolding and Metal Worker
+1421,Plastic Molding,1193,Factory & Manufacturing Worker
+1422,Insulation Worker,1196,Refrigeration & Air-conditioning
+1423,Riveter,1197,Construction Worker
+1424,Cleaner Female,1199,Cleaner
+1425,Frame Worker,1200,Construction Worker
+1426,Welder 6G(GTAW/SMAW),1216,Welder and fabricator
+1427,Stone Mason,1222,Mason
+1428,Operator/Forklift truck,1223,Driver/Vehicle Operator
+1429,Market Metal,1226,Construction Worker
+1430,Automotive Mechanic,1227,Automobile Worker
+1431,Meat Processing,1232,Cook/Chef
+1432,Nursing Care,1235,Nurse
+1433,Wrap Knitting Producing Work,1237,Textile Worker
+1434,Chiseler,1244,Craftsman
+1435,Field Cropping Vegetable Work,1247,Agriculture
+1436,Car Driver,1258,Driver/Vehicle Operator
+1437,Bus Driver,1259,Driver/Vehicle Operator
+1438,Heavy Duty Driver,1260,Driver/Vehicle Operator
+1439,Loader Unloader,1262,Loading Unloading Labor
+1440,Office & Facility Cleaner,1263,Cleaner
+1441,Office and Facility Cleaning Worker,1263,Cleaner
+1442,GeneralÂ Assistant,1267,General worker
+1443,Aircraft Loader,1268,Airline Worker
+1444,Metro Cleaner,1269,Cleaner
+1445,Duct Worker,1270,Refrigeration & Air-conditioning
+1446,Caregiver,1271,Caregiver
+1447,Construction Drilling Operation,1273,Construction Worker
+1448,Disabled Persons-Care Assistant,1275,Nurse
+1449,Unique OccupationÂ Worker,1277,General worker
+1450,Quality Engineer,2738,Engineer
