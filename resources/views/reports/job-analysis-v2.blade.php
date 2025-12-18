@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<h2>Desired Job Data Analysis Report V2</h2>
+<h2>Analysis Report V2</h2>
 
 <p>
     Generated at: {{ $generatedAt->format('Y-m-d H:i:s') }} (Asia/Dhaka)
