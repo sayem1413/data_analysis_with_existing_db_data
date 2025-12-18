@@ -39,6 +39,7 @@
     <table>
         <thead>
         <tr>
+            <th>SL</th>
             <th>CSV Title</th>
             <th>DB Match</th>
             <th>Match %</th>
