@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DesiredJob;
+use App\Models\DesiredSkill;
 
 class ManipulateDbTableController extends Controller
 {
@@ -15,6 +16,10 @@ class ManipulateDbTableController extends Controller
 
         $report = $this->analyze();
 
+        /* dd(
+            $report[0]
+        ); */
+
         $parentMatchCount = 0;
         $parentNotMatchCount = 0;
         $childMatchCount = 0;
@@ -24,31 +29,34 @@ class ManipulateDbTableController extends Controller
             $parentCategoryId = null;
             $parentData = $item['parent'];
             $childrens = $item['children'];
-            if ($parentData['score'] > $this->strongMatch && $parentData['status'] == 'Strong Match' && $parentData['db_id']) {
+            // dd($item['category'], $parentData['db_title'], $parentData['score'], $this->isSafe($item['category'], $parentData['db_title'], $parentData['score']));
+            if ($this->isSafe($item['category'], $parentData['db_title'], $parentData['score']) && $parentData['status'] == 'Strong Match' && $parentData['db_id']) {
                 $parentCategoryId = $parentData['db_id'];
                 $parentMatchCount++;
             } else {
-                /* $parentCategory = DesiredJob::create([
+                $parentCategory = DesiredSkill::create([
                     'title' => $parentData['db_title'],
                     'title_bn' => $parentData['db_title'],
                 ]);
-                $parentCategoryId  = $parentCategory->id; */
+                $parentCategoryId  = $parentCategory->id;
                 $parentNotMatchCount++;
             }
 
             if ($parentCategoryId || true) {
                 foreach ($childrens as $children) {
-                    if ($children['score'] > $this->strongMatch && $children['status'] == 'Strong Match' && $children['db_id']) {
-                        /* DesiredJob::where('id', $children['db_id'])->update([
-                            'parent_id' => $parentCategoryId
-                        ]); */
+                    if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
+                        DesiredSkill::where('id', $children['db_id'])->update([
+                            'parent_id' => $parentCategoryId,
+                            'active_status' => 'Active'
+                        ]);
                         $childMatchCount++;
                     } else {
-                        /* DesiredJob::create([
+                        DesiredSkill::create([
                             'title' => $children['db_title'],
                             'title_bn' => $children['db_title'],
-                            'parent_id' => $parentCategoryId
-                        ]); */
+                            'parent_id' => $parentCategoryId,
+                            'active_status' => 'Active'
+                        ]);
                         $childNotMatchCount++;
                     }
                 }
@@ -56,10 +64,10 @@ class ManipulateDbTableController extends Controller
         }
 
         dd(
-            'Parent Matched Count = ' . $parentMatchCount,
-            'Parent Not Matched Count = ' . $parentNotMatchCount,
-            'Child Matched Count = ' . $parentNotMatchCount,
-            'Child Not Matched Count = ' . $childNotMatchCount,
+            'Parent Found = ' . $parentMatchCount,
+            'Parent Created = ' . $parentNotMatchCount,
+            'Child Updated = ' . $parentNotMatchCount,
+            'Child Created = ' . $childNotMatchCount,
         );
     }
 
@@ -76,7 +84,7 @@ class ManipulateDbTableController extends Controller
 
         $rows = $this->readCsv($csvPath);
 
-        $dbIndex = DesiredJob::all()->map(fn($job) => [
+        $dbIndex = DesiredSkill::all()->map(fn($job) => [
             'id' => $job->id,
             'title' => $job->title,
             'norm'  => $this->normalize($job->title),
