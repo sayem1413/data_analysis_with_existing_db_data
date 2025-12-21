@@ -8,7 +8,7 @@ use App\Console\Commands\LogJobSimilarity;
 
 use Illuminate\Support\Facades\Log;
 
-class DesiredJobTableOldController extends Controller
+class DesiredJobTableController extends Controller
 {
     protected $threshold = 90;
 
