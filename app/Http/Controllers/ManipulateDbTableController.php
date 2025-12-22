@@ -63,6 +63,13 @@ class ManipulateDbTableController extends Controller
             }
         }
 
+        return [
+            'Parent Found' => $parentMatchCount,
+            'Parent Created' => $parentNotMatchCount,
+            'Child Updated' => $parentNotMatchCount,
+            'Child Created' => $childNotMatchCount,
+        ];
+
         dd(
             'Parent Found = ' . $parentMatchCount,
             'Parent Created = ' . $parentNotMatchCount,
