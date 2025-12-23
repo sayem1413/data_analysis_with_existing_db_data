@@ -12,14 +12,14 @@ class DesiredSkillMerge extends Command
      *
      * @var string
      */
-    protected $signature = 'desired-skill:merge';
+    protected $signature = 'skill-data:merge';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Merge desired skills table merge from csv data';
+    protected $description = 'Merge desired skills table with existing data merge from csv data';
 
     protected int $strongMatch = 95;
     protected int $partialMatch = 80;

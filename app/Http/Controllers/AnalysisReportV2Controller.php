@@ -12,7 +12,7 @@ class AnalysisReportV2Controller extends Controller
 
     public function downloadPdfReportV2()
     {
-        ini_set('memory_limit', '512M');
+        ini_set('memory_limit', '1024M');
 
         $report = $this->analyze();
 
