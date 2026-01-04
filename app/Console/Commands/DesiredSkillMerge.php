@@ -59,6 +59,7 @@ class DesiredSkillMerge extends Command
                 $parentCategory = DesiredSkill::create([
                     'title' => $item['category'],
                     'title_bn' => $item['category'],
+                    'parent_id' => NULL,
                     'active_status' => 'Active'
                 ]);
                 $parentCategoryId  = $parentCategory->id;
