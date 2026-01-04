@@ -47,6 +47,13 @@ class DesiredSkillMerge extends Command
             $childrens = $item['children'];
             if ($this->isSafe($item['category'], $parentData['db_title'], $parentData['score']) && $parentData['status'] == 'Strong Match' && $parentData['db_id']) {
                 $parentCategoryId = $parentData['db_id'];
+                $parentSkill = DesiredSkill::where('id', $parentData['db_id'])->first();
+
+                if($parentSkill) {
+                    $parentSkill->parent_id = NULL;
+                    $parentSkill->save();
+                }
+
                 $parentMatchCount++;
             } else {
                 $parentCategory = DesiredSkill::create([
@@ -63,7 +70,7 @@ class DesiredSkillMerge extends Command
                     if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
                         $skill = DesiredSkill::where('id', $children['db_id'])->first();
                         
-                        if($skill) {
+                        if($skill && $skill->id != $parentCategoryId) {
                             $skill->parent_id = $parentCategoryId;
                             $skill->active_status = 'Active';
 
