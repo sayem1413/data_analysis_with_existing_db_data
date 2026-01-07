@@ -50,6 +50,7 @@ class DesiredSkillMerge extends Command
                 $parentSkill = DesiredSkill::where('id', $parentData['db_id'])->first();
 
                 if($parentSkill) {
+                    $parentSkill->active_status = 'Active';
                     $parentSkill->parent_id = NULL;
                     $parentSkill->save();
                 }
