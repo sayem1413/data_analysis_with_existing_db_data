@@ -67,7 +67,7 @@ class DesiredSkillMerge extends Command
                 $parentNotMatchCount++;
             }
 
-            if ($parentCategoryId || true) {
+            if ($parentCategoryId) {
                 foreach ($childrens as $children) {
                     if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
                         $skill = DesiredSkill::where('id', $children['db_id'])->first();
