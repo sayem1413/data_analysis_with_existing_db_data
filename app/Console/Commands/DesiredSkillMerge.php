@@ -47,7 +47,7 @@ class DesiredSkillMerge extends Command
         DB::commit();
 
         $pdf = Pdf::loadView('reports.new-added-skills', [
-            'items' => collect($items),
+            'items' => $items,
             'generatedAt' => now('Asia/Dhaka'),
         ])
             ->setPaper('a4', 'portrait')
