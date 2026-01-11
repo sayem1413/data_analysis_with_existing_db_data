@@ -206,6 +206,8 @@ class DesiredSkillMerge extends Command
             }
         }
 
+        dd($bestId, $bestTitle, $bestScore);
+
         return [$bestId, $bestTitle, $bestScore];
     }
 

@@ -5,6 +5,12 @@ use App\Http\Controllers\AnalysisReportV1Controller;
 use App\Http\Controllers\AnalysisReportV2Controller;
 
 Route::get('/', function () {
+    $test = new \App\Console\Commands\DesiredSkillMerge();
+
+    dd(
+        $test->handle()
+    );
+
     return view('welcome');
 });
 
