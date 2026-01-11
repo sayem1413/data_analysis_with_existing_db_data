@@ -3,13 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnalysisReportV1Controller;
 use App\Http\Controllers\AnalysisReportV2Controller;
+use App\Console\Commands\DesiredSkillMerge;
 
 Route::get('/', function () {
-    $test = new \App\Console\Commands\DesiredSkillMerge();
+    return view('welcome');
+});
 
-    dd(
-        $test->handle()
-    );
+Route::get('/new-skills', function () {
+    $newCreatedSkills = new DesiredSkillMerge();
+
+    return $newCreatedSkills->newSkillsPdfDownloadHandle();
 
     return view('welcome');
 });

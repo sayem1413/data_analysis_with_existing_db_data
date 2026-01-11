@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\DesiredSkill;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DesiredSkillMerge extends Command
 {
@@ -37,6 +38,29 @@ class DesiredSkillMerge extends Command
         DB::commit();
     }
 
+    public function newSkillsPdfDownloadHandle()
+    {
+        $report = $this->analyze();
+
+        DB::beginTransaction();
+        $items = $this->updateTable($report);
+        DB::commit();
+
+        $pdf = Pdf::loadView('reports.new-added-skills', [
+            'items' => collect($items),
+            'generatedAt' => now('Asia/Dhaka'),
+        ])
+            ->setPaper('a4', 'portrait')
+            ->setOptions([
+                'isHtml5ParserEnabled' => true,
+                'isRemoteEnabled' => false,
+            ]);
+
+        return $pdf->download(
+            'new-created-skills-' . now('Asia/Dhaka')->format('Ymd_His') . '.pdf'
+        );
+    }
+
     private function updateTable($report)
     {
         $parentMatchCount = 0;
@@ -44,21 +68,24 @@ class DesiredSkillMerge extends Command
         $childMatchCount = 0;
         $childNotMatchCount = 0;
 
+        $items = [];
+
         foreach ($report as $item) {
+            $parentCategory = null;
             $parentCategoryId = null;
             $parentData = $item['parent'];
             $childrens = $item['children'];
             if ($this->isSafe($item['category'], $parentData['db_title'], $parentData['score']) && $parentData['status'] == 'Strong Match' && $parentData['db_id']) {
                 $parentCategoryId = $parentData['db_id'];
-                $parentSkill = DesiredSkill::where('id', $parentCategoryId)->first();
+                $parentCategory = DesiredSkill::where('id', $parentCategoryId)->first();
 
-                if ($parentSkill && $parentSkill->id == $parentCategoryId) {
-                    $parentSkill->active_status = 'Active';
-                    $parentSkill->parent_id = NULL;
-                    $parentSkill->save();
+                if ($parentCategory && $parentCategory->id == $parentCategoryId) {
+                    $parentCategory->active_status = 'Active';
+                    $parentCategory->parent_id = NULL;
+                    $parentCategory->save();
 
                     $parentMatchCount++;
-                    $this->info('Found Parent skill category number - ' . $parentMatchCount . '! Prev. Parent skill Id is - ' . $parentCategoryId);
+                    // $this->info('Found Parent skill category number - ' . $parentMatchCount . '! Prev. Parent skill Id is - ' . $parentCategoryId);
                 }
             } else {
                 $parentCategory = DesiredSkill::create([
@@ -69,7 +96,13 @@ class DesiredSkillMerge extends Command
                 ]);
                 $parentCategoryId  = $parentCategory->id;
                 $parentNotMatchCount++;
-                $this->info('Created Parent skill category number - ' . $parentNotMatchCount . '! Created Parent skill Id is - ' . $parentCategoryId);
+                $items[] = [
+                    'id' => $parentCategory->id,
+                    'title' => $parentCategory->title,
+                    'parent_id' => null,
+                    'parent_title' => null,
+                ];
+                // $this->info('Created Parent skill category number - ' . $parentNotMatchCount . '! Created Parent skill Id is - ' . $parentCategoryId);
             }
 
             if ($parentCategoryId && !empty($childrens) && count($childrens)) {
@@ -87,7 +120,7 @@ class DesiredSkillMerge extends Command
 
                             $skill->save();
                             $childMatchCount++;
-                            $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                            // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         }
                     } else {
                         $skill = DesiredSkill::create([
@@ -98,23 +131,24 @@ class DesiredSkillMerge extends Command
                             'bmet_reference_code' => $children['bmet_reference_code'],
                         ]);
                         $childNotMatchCount++;
-                        $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
+                        $items[] = [
+                            'id' => $skill->id,
+                            'title' => $skill->title,
+                            'parent_id' => $parentCategory->id,
+                            'parent_title' => $parentCategory->title,
+                        ];
+                        // $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
                     }
                 }
             }
         }
 
-        $this->info('Parent Found => ' . $parentMatchCount);
-        $this->info('Parent Created => ' . $parentNotMatchCount);
-        $this->info('Child Updated => ' . $childMatchCount);
-        $this->info('Child Created => ' . $childNotMatchCount);
+        // $this->info('Parent Found => ' . $parentMatchCount);
+        // $this->info('Parent Created => ' . $parentNotMatchCount);
+        // $this->info('Child Updated => ' . $childMatchCount);
+        // $this->info('Child Created => ' . $childNotMatchCount);
 
-        return [
-            'Parent Found' => $parentMatchCount,
-            'Parent Created' => $parentNotMatchCount,
-            'Child Updated' => $childMatchCount,
-            'Child Created' => $childNotMatchCount,
-        ];
+        return $items;
     }
 
     /**
@@ -205,8 +239,6 @@ class DesiredSkillMerge extends Command
                 $bestTitle = $item['title'];
             }
         }
-
-        dd($bestId, $bestTitle, $bestScore);
 
         return [$bestId, $bestTitle, $bestScore];
     }
