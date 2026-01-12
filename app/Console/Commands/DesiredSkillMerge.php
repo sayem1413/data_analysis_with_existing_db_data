@@ -123,6 +123,21 @@ class DesiredSkillMerge extends Command
                             $skill->save();
                             $childMatchCount++;
                             // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                        } else if($skill && $skill->id == $parentCategoryId) {
+                            $skill = DesiredSkill::where('title', $children['csv'])->orderBy('id', 'desc')->first();
+
+                            if ($skill && $skill->id != $parentCategoryId) {
+                                $skill->parent_id = $parentCategoryId;
+                                $skill->active_status = 'Active';
+
+                                if (!$skill?->bmet_reference_code) {
+                                    $skill->bmet_reference_code = $children['bmet_reference_code'];
+                                }
+
+                                $skill->save();
+                                $childMatchCount++;
+                                // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                            }
                         }
                     } else {
                         $skill = DesiredSkill::where('title', $children['csv'])->first();
