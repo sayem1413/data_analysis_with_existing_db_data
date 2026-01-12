@@ -14,7 +14,7 @@ class DesiredSkillMerge extends Command
      *
      * @var string
      */
-    protected $signature = 'merge:skill-data';
+    protected $signature = 'merge:skills';
 
     /**
      * The console command description.
