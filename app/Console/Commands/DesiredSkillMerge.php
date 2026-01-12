@@ -175,6 +175,14 @@ class DesiredSkillMerge extends Command
             }
         }
 
+        /* $unused_categories = DesiredSkill::where('parent_id', 0)->get();
+
+        foreach ($unused_categories as $unused_category) {
+            $unused_category->update([
+                'parent_id' => $unused_category->id
+            ]);
+        } */
+
         // $this->info('Parent Found => ' . $parentMatchCount);
         // $this->info('Parent Created => ' . $parentNotMatchCount);
         // $this->info('Child Updated => ' . $childMatchCount);
