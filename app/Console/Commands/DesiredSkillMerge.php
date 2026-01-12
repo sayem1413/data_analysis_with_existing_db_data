@@ -106,7 +106,9 @@ class DesiredSkillMerge extends Command
             }
 
             if ($parentCategoryId && !empty($childrens) && count($childrens)) {
+
                 foreach ($childrens as $children) {
+
                     if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
                         $skill = DesiredSkill::where('id', $children['db_id'])->first();
 
@@ -123,21 +125,36 @@ class DesiredSkillMerge extends Command
                             // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         }
                     } else {
-                        $skill = DesiredSkill::create([
-                            'title' => $children['csv'],
-                            'title_bn' => $children['csv'],
-                            'parent_id' => $parentCategoryId,
-                            'active_status' => 'Active',
-                            'bmet_reference_code' => $children['bmet_reference_code'],
-                        ]);
-                        $childNotMatchCount++;
-                        $items[] = [
-                            'id' => $skill->id,
-                            'title' => $skill->title,
-                            'parent_id' => $parentCategory->id,
-                            'parent_title' => $parentCategory->title,
-                        ];
-                        // $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
+                        $skill = DesiredSkill::where('title', $children['csv'])->first();
+
+                        if ($skill && $skill->id != $parentCategoryId) {
+                            $skill->parent_id = $parentCategoryId;
+                            $skill->active_status = 'Active';
+
+                            if (!$skill?->bmet_reference_code) {
+                                $skill->bmet_reference_code = $children['bmet_reference_code'];
+                            }
+
+                            $skill->save();
+                            $childMatchCount++;
+                            // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                        } else {
+                            $skill = DesiredSkill::create([
+                                'title' => $children['csv'],
+                                'title_bn' => $children['csv'],
+                                'parent_id' => $parentCategoryId,
+                                'active_status' => 'Active',
+                                'bmet_reference_code' => $children['bmet_reference_code'],
+                            ]);
+                            $childNotMatchCount++;
+                            $items[] = [
+                                'id' => $skill->id,
+                                'title' => $skill->title,
+                                'parent_id' => $parentCategory->id,
+                                'parent_title' => $parentCategory->title,
+                            ];
+                            // $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
+                        }
                     }
                 }
             }
