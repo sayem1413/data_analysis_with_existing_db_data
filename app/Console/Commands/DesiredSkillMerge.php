@@ -41,8 +41,6 @@ class DesiredSkillMerge extends Command
         $this->info('Parent Created => ' . $data['parentNotMatchCount']);
         $this->info('Child Updated => ' . $data['childMatchCount']);
         $this->info('Child Created => ' . $data['childNotMatchCount']);
-
-        return true;
     }
 
     public function newSkillsPdfDownloadHandle()
