@@ -12,7 +12,7 @@ class SplitAppUserCountryCodeFromMobileNo extends Command
      *
      * @var string
      */
-    protected $signature = 'split:app-user-country-code';
+    protected $signature = 'split:user-country-code';
 
     /**
      * The console command description.
@@ -21,39 +21,27 @@ class SplitAppUserCountryCodeFromMobileNo extends Command
      */
     protected $description = 'Split the APP users country codes from mobile number';
 
+    protected $last_appuser_id = 0;
+
     protected $chunk_limit = 1000;
+
+    protected $total_appuser = 0;
+
+    protected $total_appuser_with_number = 0;
 
     /**
      * Execute the console command.
      */
     public function handle()
-    {
-        /* $userIdsWithPlus88 = AppUser::where('userName', 'like', '%+%')->pluck('userName', 'userId')->toArray();
-        dd(
-            $userIdsWithPlus88,
-            array_keys($userIdsWithPlus88)
-        );
-        $users = AppUser::whereRaw("userName REGEXP '^[0-9]+$'")
-            ->whereNull('countryCode')
-            ->orderBy('userId')
-            ->chunkById(1000, function ($users) {
-                foreach ($users as $user) {
-                    dump(
-                        $user->userName
-                    );
-                }
-            }, 'userId'); */
-
+    {   
         do {
             $appUsers = AppUser::select([
                 'userId',
                 'userName',
-                'uniqueId',
-                'mobileNo',
-                'countryCode',
-                'email',
+                'countryCode'
             ])
-                ->orderBy('id')
+                ->where('userId', '>', $this->last_appuser_id)
+                ->orderBy('userId')
                 ->limit($this->chunk_limit)
                 ->get();
 
@@ -61,11 +49,33 @@ class SplitAppUserCountryCodeFromMobileNo extends Command
                 break;
             }
 
-            /* foreach ($appUsers as $appUser) {
-                if(true) {
+            foreach ($appUsers as $appUser) {
+                $this->total_appuser++;
+                if($this->isValidMobile($appUser->userName)) {
+                    try {
+                        $countryCode = getCountryCodeByPhone($appUser->userName);
 
+                        if ($countryCode && $appUser->countryCode !== $countryCode) {
+                            $appUser->update([
+                                'countryCode' => $countryCode,
+                            ]);
+                            $this->total_appuser_with_number++;
+                        }
+                    } catch (\Exception $e) {
+                        $this->error("User {$appUser->userId}: {$e->getMessage()}");
+                    }
                 }
-            } */
+            }
+
+            $this->last_appuser_id = $appUsers->last()->userId;
         } while ($appUsers->isNotEmpty());
+
+        $this->info('Total number of app users = ' . $this->total_appuser);
+        $this->info('Total number of app users with mobile number as UserName = ' . $this->total_appuser_with_number);
+    }
+
+    private function isValidMobile(?string $value): bool
+    {
+        return $value !== null && (preg_match('/^[0-9]{8,15}$/', $value) || preg_match('/^[1-9][0-9]{7,14}$/', $value));
     }
 }

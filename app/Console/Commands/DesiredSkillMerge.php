@@ -37,10 +37,10 @@ class DesiredSkillMerge extends Command
         $data = $this->updateTable($report);
         DB::commit();
 
-        $this->info('Parent Found => ' . $data['parentMatchCount']);
-        $this->info('Parent Created => ' . $data['parentNotMatchCount']);
-        $this->info('Child Updated => ' . $data['childMatchCount']);
-        $this->info('Child Created => ' . $data['childNotMatchCount']);
+        $this->info('Parent skill found count = ' . $data['parentMatchCount']);
+        $this->info('Parent skill created count = ' . $data['parentNotMatchCount']);
+        $this->info('Child skill updated count = ' . $data['childMatchCount']);
+        $this->info('Child skill created count = ' . $data['childNotMatchCount']);
     }
 
     public function newSkillsPdfDownloadHandle()
