@@ -34,8 +34,13 @@ class DesiredSkillMerge extends Command
         $report = $this->analyze();
 
         DB::beginTransaction();
-        $this->updateTable($report);
+        $data = $this->updateTable($report);
         DB::commit();
+
+        $this->info('Parent Found => ' . $data['parentMatchCount']);
+        $this->info('Parent Created => ' . $data['parentNotMatchCount']);
+        $this->info('Child Updated => ' . $data['childMatchCount']);
+        $this->info('Child Created => ' . $data['childNotMatchCount']);
 
         return true;
     }
@@ -45,11 +50,11 @@ class DesiredSkillMerge extends Command
         $report = $this->analyze();
 
         DB::beginTransaction();
-        $items = $this->updateTable($report);
+        $data = $this->updateTable($report);
         DB::commit();
 
         $pdf = Pdf::loadView('reports.new-added-skills', [
-            'items' => $items,
+            'items' => $data['items'],
             'generatedAt' => now('Asia/Dhaka'),
         ])
             ->setPaper('a4', 'portrait')
@@ -177,12 +182,15 @@ class DesiredSkillMerge extends Command
             }
         }
 
-        // $this->info('Parent Found => ' . $parentMatchCount);
-        // $this->info('Parent Created => ' . $parentNotMatchCount);
-        // $this->info('Child Updated => ' . $childMatchCount);
-        // $this->info('Child Created => ' . $childNotMatchCount);
+        $this->unusedSkillCategories();
 
-        return $items;
+        return [
+            'items' => $items,
+            'parentMatchCount' => $parentMatchCount,
+            'parentNotMatchCount' => $parentNotMatchCount,
+            'childMatchCount' => $childMatchCount,
+            'childNotMatchCount' => $childNotMatchCount,
+        ];
     }
 
     public function unusedSkillCategories()
