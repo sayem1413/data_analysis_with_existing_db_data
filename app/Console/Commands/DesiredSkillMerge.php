@@ -180,7 +180,7 @@ class DesiredSkillMerge extends Command
             }
         }
 
-        $this->unusedSkillCategories();
+        $this->handleUnusedSkillCategories();
 
         return [
             'items' => $items,
@@ -191,7 +191,7 @@ class DesiredSkillMerge extends Command
         ];
     }
 
-    public function unusedSkillCategories()
+    public function handleUnusedSkillCategories()
     {
         $unused_categories = DesiredSkill::where('parent_id', 0)->get();
 

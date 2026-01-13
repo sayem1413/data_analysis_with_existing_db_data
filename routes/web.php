@@ -18,7 +18,7 @@ Route::get('/new-skills', function () {
 Route::get('/unused-skills', function () {
     $newCreatedSkills = new DesiredSkillMerge();
 
-    return $newCreatedSkills->unusedSkillCategories();
+    return $newCreatedSkills->handleUnusedSkillCategories();
 });
 
 Route::get('/analysis/v1/pdf', [AnalysisReportV1Controller::class, 'downloadPdfReportV1']);
