@@ -13,8 +13,12 @@ Route::get('/new-skills', function () {
     $newCreatedSkills = new DesiredSkillMerge();
 
     return $newCreatedSkills->newSkillsPdfDownloadHandle();
+});
 
-    return view('welcome');
+Route::get('/unused-skills', function () {
+    $newCreatedSkills = new DesiredSkillMerge();
+
+    return $newCreatedSkills->unusedSkillCategories();
 });
 
 Route::get('/analysis/v1/pdf', [AnalysisReportV1Controller::class, 'downloadPdfReportV1']);

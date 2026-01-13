@@ -36,6 +36,8 @@ class DesiredSkillMerge extends Command
         DB::beginTransaction();
         $this->updateTable($report);
         DB::commit();
+
+        return true;
     }
 
     public function newSkillsPdfDownloadHandle()
@@ -175,20 +177,25 @@ class DesiredSkillMerge extends Command
             }
         }
 
-        /* $unused_categories = DesiredSkill::where('parent_id', 0)->get();
-
-        foreach ($unused_categories as $unused_category) {
-            $unused_category->update([
-                'parent_id' => $unused_category->id
-            ]);
-        } */
-
         // $this->info('Parent Found => ' . $parentMatchCount);
         // $this->info('Parent Created => ' . $parentNotMatchCount);
         // $this->info('Child Updated => ' . $childMatchCount);
         // $this->info('Child Created => ' . $childNotMatchCount);
 
         return $items;
+    }
+
+    public function unusedSkillCategories()
+    {
+        $unused_categories = DesiredSkill::where('parent_id', 0)->get();
+
+        foreach ($unused_categories as $unused_category) {
+            $unused_category->update([
+                'parent_id' => $unused_category->id
+            ]);
+        }
+
+        return true;
     }
 
     /**
