@@ -95,7 +95,7 @@ class DesiredSkillMerge extends Command
             } else {
                 $parentCategory = DesiredSkill::create([
                     'title' => $item['category'],
-                    'title_bn' => $item['category'],
+                    'title_bn' => $item['category_bn'] ?? $item['category'],
                     'parent_id' => NULL,
                     'active_status' => 'Active'
                 ]);
@@ -253,6 +253,7 @@ class DesiredSkillMerge extends Command
 
             $report[] = [
                 'category' => $csv_category,
+                'category_bn' => $items[0]['Category_BN'], // Only for new parent skills
                 'parent' => [
                     'db_id'  => $parentMatchId,
                     'db_title'  => $parentMatch,

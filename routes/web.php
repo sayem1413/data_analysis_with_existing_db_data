@@ -9,6 +9,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/merge-skills', function () {
+    $newCreatedSkills = new DesiredSkillMerge();
+
+    return $newCreatedSkills->handle();
+});
+
 Route::get('/new-skills', function () {
     $newCreatedSkills = new DesiredSkillMerge();
 
