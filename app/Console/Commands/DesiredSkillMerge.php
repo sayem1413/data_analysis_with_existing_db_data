@@ -107,7 +107,7 @@ class DesiredSkillMerge extends Command
                     'parent_id' => null,
                     'parent_title' => null,
                 ];
-                // $this->info('Created Parent skill category number - ' . $parentNotMatchCount . '! Created Parent skill Id is - ' . $parentCategoryId);
+                $this->info('Created Parent skill category number - ' . $parentNotMatchCount . '! Created Parent skill Id is - ' . $parentCategoryId);
             }
 
             if ($parentCategoryId && !empty($childrens) && count($childrens)) {
@@ -127,7 +127,7 @@ class DesiredSkillMerge extends Command
 
                             $skill->save();
                             $childMatchCount++;
-                            // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                            $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         } else if($skill && $skill->id == $parentCategoryId) {
                             $skill = DesiredSkill::where('title', $children['csv'])->orderBy('id', 'desc')->first();
 
@@ -141,7 +141,7 @@ class DesiredSkillMerge extends Command
 
                                 $skill->save();
                                 $childMatchCount++;
-                                // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                                $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                             }
                         }
                     } else {
@@ -157,7 +157,7 @@ class DesiredSkillMerge extends Command
 
                             $skill->save();
                             $childMatchCount++;
-                            // $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                            $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         } else {
                             $skill = DesiredSkill::create([
                                 'title' => $children['csv'],
@@ -173,7 +173,7 @@ class DesiredSkillMerge extends Command
                                 'parent_id' => $parentCategory->id,
                                 'parent_title' => $parentCategory->title,
                             ];
-                            // $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
+                            $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
                         }
                     }
                 }
