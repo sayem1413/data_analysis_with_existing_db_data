@@ -40,5 +40,8 @@ Route::get('/dev', function() {
         getCountryCodeByPhone('1-202-555-0185'),
         getCountryCodeByPhone('+1907-555-0699'),
         getCountryCodeByPhone('1907-555-0699'),
+        getCountryCodeByPhone('+971501234567'),
+        getCountryCodeByPhone('971501234567'),
+        getCountryCodeByPhone('971501234567'),
     );
 });
