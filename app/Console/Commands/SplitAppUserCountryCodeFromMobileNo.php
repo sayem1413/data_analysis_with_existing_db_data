@@ -12,7 +12,7 @@ class SplitAppUserCountryCodeFromMobileNo extends Command
      *
      * @var string
      */
-    protected $signature = 'split:user-country-code';
+    protected $signature = 'split:country-code';
 
     /**
      * The console command description.
