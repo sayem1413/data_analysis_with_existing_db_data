@@ -4,9 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\DesiredJob;
-use App\Models\DesiredSkill;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class JobAnalysisMerge extends Command
 {
@@ -44,29 +42,6 @@ class JobAnalysisMerge extends Command
         $this->info('Child skill created count = ' . $data['childNotMatchCount']);
     }
 
-    public function newSkillsPdfDownloadHandle()
-    {
-        $report = $this->analyze();
-
-        DB::beginTransaction();
-        $data = $this->updateTable($report);
-        DB::commit();
-
-        $pdf = Pdf::loadView('reports.new-added-skills', [
-            'items' => $data['items'],
-            'generatedAt' => now('Asia/Dhaka'),
-        ])
-            ->setPaper('a4', 'portrait')
-            ->setOptions([
-                'isHtml5ParserEnabled' => true,
-                'isRemoteEnabled' => false,
-            ]);
-
-        return $pdf->download(
-            'new-created-skills-' . now('Asia/Dhaka')->format('Ymd_His') . '.pdf'
-        );
-    }
-
     private function updateTable($report)
     {
         $parentMatchCount = 0;
@@ -83,7 +58,7 @@ class JobAnalysisMerge extends Command
             $childrens = $item['children'];
             if ($this->isSafe($item['category'], $parentData['db_title'], $parentData['score']) && $parentData['status'] == 'Strong Match' && $parentData['db_id']) {
                 $parentCategoryId = $parentData['db_id'];
-                $parentCategory = DesiredSkill::where('id', $parentCategoryId)->first();
+                $parentCategory = DesiredJob::where('id', $parentCategoryId)->first();
 
                 if ($parentCategory && $parentCategory->id == $parentCategoryId) {
                     $parentCategory->active_status = 'Active';
@@ -94,7 +69,7 @@ class JobAnalysisMerge extends Command
                     // $this->info('Found Parent skill category number - ' . $parentMatchCount . '! Prev. Parent skill Id is - ' . $parentCategoryId);
                 }
             } else {
-                $parentCategory = DesiredSkill::create([
+                $parentCategory = DesiredJob::create([
                     'title' => $item['category'],
                     'title_bn' => $item['category_bn'] ?? $item['category'],
                     'parent_id' => NULL,
@@ -116,7 +91,7 @@ class JobAnalysisMerge extends Command
                 foreach ($childrens as $children) {
 
                     if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
-                        $skill = DesiredSkill::where('id', $children['db_id'])->first();
+                        $skill = DesiredJob::where('id', $children['db_id'])->first();
 
                         if ($skill && $skill->id != $parentCategoryId && $skill->id == $children['db_id']) {
                             $skill->parent_id = $parentCategoryId;
@@ -130,7 +105,7 @@ class JobAnalysisMerge extends Command
                             $childMatchCount++;
                             $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         } else if($skill && $skill->id == $parentCategoryId) {
-                            $skill = DesiredSkill::where('title', $children['csv'])->orderBy('id', 'desc')->first();
+                            $skill = DesiredJob::where('title', $children['csv'])->orderBy('id', 'desc')->first();
 
                             if ($skill && $skill->id != $parentCategoryId) {
                                 $skill->parent_id = $parentCategoryId;
@@ -146,7 +121,7 @@ class JobAnalysisMerge extends Command
                             }
                         }
                     } else {
-                        $skill = DesiredSkill::where('title', $children['csv'])->first();
+                        $skill = DesiredJob::where('title', $children['csv'])->first();
 
                         if ($skill && $skill->id != $parentCategoryId) {
                             $skill->parent_id = $parentCategoryId;
@@ -160,7 +135,7 @@ class JobAnalysisMerge extends Command
                             $childMatchCount++;
                             $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
                         } else {
-                            $skill = DesiredSkill::create([
+                            $skill = DesiredJob::create([
                                 'title' => $children['csv'],
                                 'title_bn' => $children['csv'],
                                 'parent_id' => $parentCategoryId,
@@ -194,7 +169,7 @@ class JobAnalysisMerge extends Command
 
     public function handleUnusedSkillCategories()
     {
-        $unused_categories = DesiredSkill::where('parent_id', 0)->get();
+        $unused_categories = DesiredJob::where('parent_id', 0)->get();
 
         foreach ($unused_categories as $unused_category) {
             $unused_category->update([
@@ -218,7 +193,7 @@ class JobAnalysisMerge extends Command
 
         $rows = $this->readCsv($csvPath);
 
-        $dbIndex = DesiredSkill::all()->map(fn($job) => [
+        $dbIndex = DesiredJob::all()->map(fn($job) => [
             'id' => $job->id,
             'title' => $job->title,
             'norm'  => $this->normalize($job->title),
