@@ -13,17 +13,17 @@ class JobAnalysisMerge extends Command
      *
      * @var string
      */
-    protected $signature = 'app:job-analysis-merge';
+    protected $signature = 'analysis:merge-job';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Merge desired jobs table with existing data merge from csv data';
+    protected $description = 'Analysis and merge desired jobs table with existing data merge from csv data';
 
-    protected int $strongMatch = 95;
-    protected int $partialMatch = 80;
+    protected int $strongMatch = 98;
+    protected int $partialMatch = 90;
 
     /**
      * Execute the console command.
@@ -66,7 +66,7 @@ class JobAnalysisMerge extends Command
                     $parentCategory->save();
 
                     $parentMatchCount++;
-                    // $this->info('Found Parent skill category number - ' . $parentMatchCount . '! Prev. Parent skill Id is - ' . $parentCategoryId);
+                    $this->info('Found Parent job category number - ' . $parentMatchCount . '! Prev. Parent job Id is - ' . $parentCategoryId);
                 }
             } else {
                 $parentCategory = DesiredJob::create([
@@ -83,7 +83,7 @@ class JobAnalysisMerge extends Command
                     'parent_id' => null,
                     'parent_title' => null,
                 ];
-                $this->info('Created Parent skill category number - ' . $parentNotMatchCount . '! Created Parent skill Id is - ' . $parentCategoryId);
+                $this->info('Created Parent job category number - ' . $parentNotMatchCount . '! Created Parent job Id is - ' . $parentCategoryId);
             }
 
             if ($parentCategoryId && !empty($childrens) && count($childrens)) {
@@ -91,51 +91,51 @@ class JobAnalysisMerge extends Command
                 foreach ($childrens as $children) {
 
                     if ($this->isSafe($children['csv'], $children['db_title'], $children['score']) && $children['status'] == 'Strong Match' && $children['db_id']) {
-                        $skill = DesiredJob::where('id', $children['db_id'])->first();
+                        $job = DesiredJob::where('id', $children['db_id'])->first();
 
-                        if ($skill && $skill->id != $parentCategoryId && $skill->id == $children['db_id']) {
-                            $skill->parent_id = $parentCategoryId;
-                            $skill->active_status = 'Active';
+                        if ($job && $job->id != $parentCategoryId && $job->id == $children['db_id']) {
+                            $job->parent_id = $parentCategoryId;
+                            $job->active_status = 'Active';
 
-                            if (!$skill?->bmet_reference_code) {
-                                $skill->bmet_reference_code = $children['bmet_reference_code'];
+                            if (!$job?->bmet_reference_code) {
+                                $job->bmet_reference_code = $children['bmet_reference_code'];
                             }
 
-                            $skill->save();
+                            $job->save();
                             $childMatchCount++;
-                            $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
-                        } else if($skill && $skill->id == $parentCategoryId) {
-                            $skill = DesiredJob::where('title', $children['csv'])->orderBy('id', 'desc')->first();
+                            $this->info('Found Child job category number - ' . $childMatchCount . '! Prev. Child job Id is - ' . $job->id);
+                        } else if($job && $job->id == $parentCategoryId) {
+                            $job = DesiredJob::where('title', $children['csv'])->orderBy('id', 'desc')->first();
 
-                            if ($skill && $skill->id != $parentCategoryId) {
-                                $skill->parent_id = $parentCategoryId;
-                                $skill->active_status = 'Active';
+                            if ($job && $job->id != $parentCategoryId) {
+                                $job->parent_id = $parentCategoryId;
+                                $job->active_status = 'Active';
 
-                                if (!$skill?->bmet_reference_code) {
-                                    $skill->bmet_reference_code = $children['bmet_reference_code'];
+                                if (!$job?->bmet_reference_code) {
+                                    $job->bmet_reference_code = $children['bmet_reference_code'];
                                 }
 
-                                $skill->save();
+                                $job->save();
                                 $childMatchCount++;
-                                $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                                $this->info('Found Child job category number - ' . $childMatchCount . '! Prev. Child job Id is - ' . $job->id);
                             }
                         }
                     } else {
-                        $skill = DesiredJob::where('title', $children['csv'])->first();
+                        $job = DesiredJob::where('title', $children['csv'])->first();
 
-                        if ($skill && $skill->id != $parentCategoryId) {
-                            $skill->parent_id = $parentCategoryId;
-                            $skill->active_status = 'Active';
+                        if ($job && $job->id != $parentCategoryId) {
+                            $job->parent_id = $parentCategoryId;
+                            $job->active_status = 'Active';
 
-                            if (!$skill?->bmet_reference_code) {
-                                $skill->bmet_reference_code = $children['bmet_reference_code'];
+                            if (!$job?->bmet_reference_code) {
+                                $job->bmet_reference_code = $children['bmet_reference_code'];
                             }
 
-                            $skill->save();
+                            $job->save();
                             $childMatchCount++;
-                            $this->info('Found Child skill category number - ' . $childMatchCount . '! Prev. Child skill Id is - ' . $skill->id);
+                            $this->info('Found Child job category number - ' . $childMatchCount . '! Prev. Child job Id is - ' . $job->id);
                         } else {
-                            $skill = DesiredJob::create([
+                            $job = DesiredJob::create([
                                 'title' => $children['csv'],
                                 'title_bn' => $children['csv'],
                                 'parent_id' => $parentCategoryId,
@@ -144,19 +144,19 @@ class JobAnalysisMerge extends Command
                             ]);
                             $childNotMatchCount++;
                             $items[] = [
-                                'id' => $skill->id,
-                                'title' => $skill->title,
+                                'id' => $job->id,
+                                'title' => $job->title,
                                 'parent_id' => $parentCategory->id,
                                 'parent_title' => $parentCategory->title,
                             ];
-                            $this->info('Created Child skill category number - ' . $childNotMatchCount . '! Created Child skill Id is - ' . $skill->id);
+                            $this->info('Created Child job category number - ' . $childNotMatchCount . '! Created Child job Id is - ' . $job->id);
                         }
                     }
                 }
             }
         }
 
-        $this->handleUnusedSkillCategories();
+        $this->handleUnusedJobCategories();
 
         return [
             'items' => $items,
@@ -167,7 +167,7 @@ class JobAnalysisMerge extends Command
         ];
     }
 
-    public function handleUnusedSkillCategories()
+    public function handleUnusedJobCategories()
     {
         $unused_categories = DesiredJob::where('parent_id', 0)->get();
 
