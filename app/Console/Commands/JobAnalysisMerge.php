@@ -20,7 +20,7 @@ class JobAnalysisMerge extends Command
      *
      * @var string
      */
-    protected $description = 'Analysis and merge desired jobs table with existing data merge from csv data';
+    protected $description = 'Analysis and merge desired jobs table with existing data and merge from csv data analysis';
 
     protected int $strongMatch = 98;
     protected int $partialMatch = 90;
@@ -36,10 +36,10 @@ class JobAnalysisMerge extends Command
         $data = $this->updateTable($report);
         DB::commit();
 
-        $this->info('Parent skill found count = ' . $data['parentMatchCount']);
-        $this->info('Parent skill created count = ' . $data['parentNotMatchCount']);
-        $this->info('Child skill updated count = ' . $data['childMatchCount']);
-        $this->info('Child skill created count = ' . $data['childNotMatchCount']);
+        $this->info('Parent skill found count => ' . $data['parentMatchCount']);
+        $this->info('Parent skill created count => ' . $data['parentNotMatchCount']);
+        $this->info('Child skill updated count => ' . $data['childMatchCount']);
+        $this->info('Child skill created count => ' . $data['childNotMatchCount']);
     }
 
     private function updateTable($report)
@@ -229,7 +229,7 @@ class JobAnalysisMerge extends Command
 
             $report[] = [
                 'category' => $csv_category,
-                'category_bn' => $items[0]['Category_BN'], // Only for new parent skills
+                'category_bn' => $items[0]['Category_BN'] ?? $items[0]['Category BN'], // Only for new parent skills
                 'parent' => [
                     'db_id'  => $parentMatchId,
                     'db_title'  => $parentMatch,
