@@ -8,11 +8,11 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class AnalysisReportV2Controller extends Controller
 {
     protected int $strongMatch = 95;
-    protected int $partialMatch = 85;
+    protected int $partialMatch = 80;
 
     public function downloadPdfReportV2()
     {
-        ini_set('memory_limit', '512M');
+        ini_set('memory_limit', '1024M');
 
         $report = $this->analyze();
 

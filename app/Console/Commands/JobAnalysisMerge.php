@@ -22,8 +22,8 @@ class JobAnalysisMerge extends Command
      */
     protected $description = 'Analysis and merge desired jobs table with existing data and merge from csv data analysis';
 
-    protected int $strongMatch = 98;
-    protected int $partialMatch = 90;
+    protected int $strongMatch = 95;
+    protected int $partialMatch = 80;
 
     /**
      * Execute the console command.
