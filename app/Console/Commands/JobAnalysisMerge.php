@@ -169,11 +169,11 @@ class JobAnalysisMerge extends Command
 
     public function handleUnusedJobCategories()
     {
-        $unused_categories = DesiredJob::where('parent_id', 0)->get();
+        $categories = DesiredJob::where('parent_id', 0)->get();
 
-        foreach ($unused_categories as $unused_category) {
-            $unused_category->update([
-                'parent_id' => $unused_category->id
+        foreach ($categories as $category) {
+            $category->update([
+                'parent_id' => $category->id
             ]);
         }
 
