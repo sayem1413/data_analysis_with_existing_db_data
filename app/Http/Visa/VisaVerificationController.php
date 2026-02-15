@@ -1,196 +1,189 @@
 <?php
 
-namespace App\Http\Controllers\Api\Visa;
+namespace App\Http\Services;
 
-use App\Http\Controllers\Controller;
 use App\Http\Contracts\VisaContract;
-use App\Http\Requests\Visa\VisaVerificationStoreRequest;
+use App\Http\Contracts\DataContract;
+use App\Models\Country;
+use App\Models\Visa\VisaCheckLink;
+use App\Models\Visa\VisaVerificationRequest;
+use App\Models\Visa\VisaVerificationUpdateLog;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\App;
+use Illuminate\Validation\ValidationException;
 
-class VisaVerificationController extends Controller
+class VisaService implements VisaContract
 {
-    protected VisaContract $visa;
+    protected DataContract $data;
 
-    /**
-     * Create a new AuthController instance.
-     *
-     * @return void
-     */
-    public function __construct(VisaContract $visa)
+    public function __construct(DataContract $data)
     {
-        $this->visa = $visa;
+        $this->data = $data;
     }
 
-    /**
-     * @return JsonResponse
-     *
-     * @OA\Get(
-     *     path="/{locale}/visa-verification",
-     *     tags={"Visa Verification"},
-     *     summary="Get Visa Verification predefined data",
-     *     security={{"jwt":{}}},
-     *     operationId="get-visa-verification-predefined-data",
-     *
-     *     @OA\Parameter(ref="#/components/parameters/XApiKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPushKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPlatform"),
-     *     @OA\Parameter(ref="#/components/parameters/PathLocale"),
-     *
-     *     @OA\Response(
-     *         response=200,
-     *         description="OK",
-     *
-     *         @OA\JsonContent(
-     *
-     *             @OA\Examples(example="Success", value={"status":true,"response_code":1000,"message":"Data retrieved","errors":null,"data":{{"id":194,"title":"সৌদি আরব","title_bn":"সৌদি আরব","code":"SA","dial_code":null,"title_en":"Saudi Arabia"},{"id":156,"title":"ইউনাইটেড  আরব আমিরাত","title_bn":"ইউনাইটেড  আরব আমিরাত","code":"AE","dial_code":null,"title_en":"United Arab Emirates"}}}, summary="An result object.")
-     *         )
-     *     )
-     * )
-     */
     public function getAcceptedCountries()
     {
-        $data = $this->visa->getAcceptedCountries();
-
-        return successResponse(trans('message.data_retrieved'), $data);
+        return $this->data->countries();
     }
 
-    /**
-     * @return JsonResponse
-     *
-     * @OA\Get(
-     *     path="/{locale}/visa-verification/country/{country_id}",
-     *     tags={"Visa Verification"},
-     *     summary="Get Visa Verification selected country data by country id",
-     *     security={{"jwt":{}}},
-     *     operationId="get-visa-verification-selected-country-data-country-id",
-     *
-     *     @OA\Parameter(ref="#/components/parameters/XApiKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPushKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPlatform"),
-     *     @OA\Parameter(ref="#/components/parameters/PathLocale"),
-     * 
-     *     @OA\Parameter(
-     *          name="country_id",
-     *          in="path",
-     *          description="Country ID",
-     *          required=true,
-     *     ),
-     *
-     *     @OA\Response(
-     *         response=200,
-     *         description="OK",
-     *
-     *         @OA\JsonContent(
-     *
-     *             @OA\Examples(example="Success", value={"status":true,"response_code":1000,"message":"Data retrieved","errors":null,"data":{"title":"Saudi Arabia","title_en":"Saudi Arabia","title_bn":"সৌদি আরব","required_properties":{"passport_number","visa_no"}}}, summary="An result object.")
-     *         )
-     *     )
-     * )
-     */
-    public function getCountryDetails($country_id)
+    public function getCountryDetails(int $country_id)
     {
-        $data = $this->visa->getCountryDetails($country_id);
+        $locale = App::getLocale();
 
-        return successResponse(trans('message.data_retrieved'), $data);
+        $country = Country::findOrFail($country_id);
+        $visa_check_link = VisaCheckLink::where('country_id', $country->id)
+            ->where('type', 1)
+            ->where('active_status', 'Active')
+            ->first();
+
+        return [
+            'title' => $locale == 'en' ? trim($country->title) : trim($country->title_bn),
+            'title_en' => trim($country->title),
+            'title_bn' => trim($country->title_bn),
+            'required_properties' => $visa_check_link?->required_properties ? json_decode($visa_check_link->required_properties) : null,
+        ];
     }
 
-    /**
-     * @return JsonResponse
-     *
-     * @OA\Get(
-     *     path="/{locale}/visa-verification/countries",
-     *     tags={"Visa Verification"},
-     *     summary="Get Visa Verification selected countries data",
-     *     security={{"jwt":{}}},
-     *     operationId="get-visa-verification-selected-countries-data",
-     *
-     *     @OA\Parameter(ref="#/components/parameters/XApiKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPushKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPlatform"),
-     *     @OA\Parameter(ref="#/components/parameters/PathLocale"),
-     * 
-     *     @OA\Response(
-     *         response=200,
-     *         description="OK",
-     *
-     *         @OA\JsonContent(
-     *
-     *             @OA\Examples(example="Success", value={"status":true,"response_code":1000,"message":"Data retrieved","errors":null,"data":{{"request_id":1125000117,"request_status":0,"country_id":121,"country_title":"Qatar","country_title_en":"Qatar","country_title_bn":"কাতার","country_code":null,"country_logo":null}}}, summary="An result object.")
-     *         )
-     *     )
-     * )
-     */
     public function getVerificationRequestedCountries()
     {
-        $data = $this->visa->getVerificationRequestedCountries();
+        $locale = App::getLocale();
+        $data = [];
+        $expat = expat();
+        $requests = VisaVerificationRequest::with([
+            'country:id,title,title_bn'
+        ])
+            // ->where('expat_id', $expat->id)
+            ->where('expat_id', 4457637)
+            ->get();
 
-        return successResponse(trans('message.data_retrieved'), $data);
+        foreach ($requests as $request) {
+            $country = $request->country;
+            $data[] = [
+                'request_id' => $request->request_id,
+                'request_status' => $this->getVisaRequestStatus($request->visa_status),
+                'country_id' => $country?->id ?? $request->visa_country_id,
+                'country_title' => $locale == 'en' ? $country?->title : $country?->title_bn,
+                'country_title_en' => $country?->title,
+                'country_title_bn' => $country?->title_bn,
+                'country_code' => $country?->code,
+                'country_logo' => $country?->logo
+            ];
+        }
+
+        return $data;
     }
 
-    /**
-     * @return JsonResponse
-     *
-     * @OA\Get(
-     *     path="/{locale}/visa-verification/request/{request_id}",
-     *     tags={"Visa Verification"},
-     *     summary="Get Visa Verification request info by request id",
-     *     security={{"jwt":{}}},
-     *     operationId="get-visa-verification-request-info-by-request-id",
-     *
-     *     @OA\Parameter(ref="#/components/parameters/XApiKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPushKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPlatform"),
-     *     @OA\Parameter(ref="#/components/parameters/PathLocale"),
-     * 
-     *     @OA\Parameter(ref="#/components/parameters/VisaVerificationReqId"),
-     *
-     *     @OA\Response(
-     *         response=200,
-     *         description="OK",
-     *
-     *         @OA\JsonContent(
-     *
-     *             @OA\Examples(example="Success", value={"status":true,"response_code":1000,"message":"Data retrieved","errors":null,"data":{"request_id":1125000117,"request_status":0,"payment_status":1,"tracking_data":{{"title":"Application Submitted","value":"Nov 18, 05:06 PM","status":1},{"title":"Payment Done","value":"Nov 18, 05:06 PM","status":0},{"title":"Visa checking","value":"In Progress","status":0},{"title":"Verification Result","value":"Pending","status":0}}}}, summary="An result object.")
-     *         )
-     *     )
-     * )
-     */
-    public function getVerificationRequestInfo($request_id)
+    public function getVerificationRequestInfo(int $request_id)
     {
-        $data = $this->visa->getVerificationRequestInfo($request_id);
+        $expat = expat();
+        $request = VisaVerificationRequest::where('expat_id', 4457637)
+            ->where('request_id', $request_id)
+            ->first();
 
-        return successResponse(trans('message.data_retrieved'), $data);
+        if(empty($request)) {
+            throw ValidationException::withMessages([
+                'no_data_found' => [trans('message.no_data_found')],
+            ]);
+        }
+
+        $tracking_data = [
+            [
+                "title" => "Application Submitted",
+                "value" => $request->created_at ? Carbon::parse($request->created_at)->format('M d, h:i A') : null,
+                "status" => 1,
+            ],
+            [
+                "title" => "Payment Done",
+                "value" => $request->payment_date ? Carbon::parse($request->payment_date)->format('M d, h:i A') : ($request->payment_request_date ? Carbon::parse($request->payment_request_date)->format('M d, h:i A') : null),
+                "status" => $request->payment_status == 'Paid' ? 1 : 0,
+            ],
+            [
+                "title" => "Visa checking",
+                "value" => $request->check_date ? Carbon::parse($request->check_date)->format('M d, h:i A') : 'In Progress',
+                "status" => $request->check_date ? 1 : 0,
+            ],
+            [
+                "title" => $this->getVisaRequestResTitle($request->visa_status),
+                "value" => $request->check_date ? Carbon::parse($request->check_date)->format('M d, h:i A') : 'Pending',
+                "status" => $request->check_date ? 1 : 0,
+            ]
+        ];
+
+        $data = [
+            'request_id' => $request->request_id,
+            'request_status' => $this->getVisaRequestStatus($request->visa_status),
+            'payment_status' => $this->getVisaRequestPaymentStatus($request->payment_status),
+            'tracking_data' => $tracking_data
+        ];
+
+        return $data;
     }
 
-    /**
-     * @return JsonResponse
-     *
-     * @OA\Post(
-     *     path="/{locale}/visa-verification/request",
-     *     tags={"Visa Verification"},
-     *     summary="Update Visa Verification request data by request id",
-     *     security={{"jwt":{}}},
-     *     operationId="update-visa-verification-request-data-by-request-id",
-     *
-     *     @OA\Parameter(ref="#/components/parameters/XApiKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPushKey"),
-     *     @OA\Parameter(ref="#/components/parameters/XPlatform"),
-     *     @OA\Parameter(ref="#/components/parameters/PathLocale"),
-     *
-     *     @OA\Response(
-     *         response=200,
-     *         description="OK",
-     *
-     *         @OA\JsonContent(
-     *
-     *             @OA\Examples(example="Success", value={"status":true,"message":"Data retrieved","errors":null,"data":{}}, summary="An result object.")
-     *         )
-     *     )
-     * )
-     */
-    public function storeVerificationRequestInfo(VisaVerificationStoreRequest $request)
+    public function storeVerificationRequestInfo(array $data)
     {
-        $data = $this->visa->storeVerificationRequestInfo($request->all());
+        $expat = expat();
+        $user = auth()->user();
+        $request_id = $data['request_id'] ?? null;
+        $country_id = $data['country_id'] ?? null;
+        $passport_number = $data['passport_number'] ?? null;
+        $visa_no = $data['visa_no'] ?? null;
+        $visa_ref_no = $data['visa_ref_no'] ?? null;
+        $date_of_birth = $data['date_of_birth'] ?? null;
 
-        return successResponse(trans('message.data_retrieved'), $data);
+        $data = [
+            'expat_id' => $expat->id,
+            'full_name' => $expat->first_name,
+            'mobile' => $expat->phone ?? ($user->mobileNo ?? null),
+            'passport' => $passport_number ?? $expat->passport_number,
+            'date_of_birth' => Carbon::parse($date_of_birth),
+            'visa_country_id' => $country_id,
+            'visa_no' => $visa_no,
+            'visa_ref_no' => $visa_ref_no,
+        ];
+
+        if(!empty($request_id)) {
+            $visa_verification_request = VisaVerificationRequest::where('request_id', $request_id)->first();
+            $visa_verification_request->update($data);
+        } else {
+            $visa_verification_request = VisaVerificationRequest::create($data);
+            $request_id = VisaVerificationRequest::getRequestId($visa_verification_request);
+            $visa_verification_request->update([
+                'request_id' => $request_id
+            ]);
+        }
+
+        return $visa_verification_request;
     }
+
+    private function getVisaRequestStatus($request_status)
+    {
+        $status = ['Pending' => 0, 'Document-re-request' => 1, 'Document-re-submitted' => 2, 'Valid' => 3, 'Invalid' => 4];
+        if (empty($request_status)) {
+            return $status['Pending'];
+        }
+
+        return $status[$request_status];
+    }
+
+    private function getVisaRequestResTitle($request_status)
+    {
+        $title = "Verification Result";
+        if($request_status == "Valid") {
+            $title = "Visa Verified";
+        } else if($request_status == "Invalid") {
+            $title = "Invalid Visa";
+        }
+        return $title;
+    }
+
+    private function getVisaRequestPaymentStatus($request_payment_status)
+    {
+        $status = ['Pending' => 0, 'Initiated' => 1, 'Paid' => 2, 'Failed' => 3];
+        if (empty($request_payment_status)) {
+            return $status['Pending'];
+        }
+
+        return $status[$request_payment_status];
+    }
+
 }

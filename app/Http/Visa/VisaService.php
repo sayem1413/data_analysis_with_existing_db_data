@@ -121,7 +121,38 @@ class VisaService implements VisaContract
 
     public function storeVerificationRequestInfo(array $data)
     {
-        return [];
+        $expat = expat();
+        $user = auth()->user();
+        $request_id = $data['request_id'] ?? null;
+        $country_id = $data['country_id'] ?? null;
+        $passport_number = $data['passport_number'] ?? null;
+        $visa_no = $data['visa_no'] ?? null;
+        $visa_ref_no = $data['visa_ref_no'] ?? null;
+        $date_of_birth = $data['date_of_birth'] ?? null;
+
+        $data = [
+            'expat_id' => $expat->id,
+            'full_name' => $expat->first_name,
+            'mobile' => $expat->phone ?? ($user->mobileNo ?? null),
+            'passport' => $passport_number ?? $expat->passport_number,
+            'date_of_birth' => Carbon::parse($date_of_birth),
+            'visa_country_id' => $country_id,
+            'visa_no' => $visa_no,
+            'visa_ref_no' => $visa_ref_no,
+        ];
+
+        if(!empty($request_id)) {
+            $visa_verification_request = VisaVerificationRequest::where('request_id', $request_id)->first();
+            $visa_verification_request->update($data);
+        } else {
+            $visa_verification_request = VisaVerificationRequest::create($data);
+            $request_id = VisaVerificationRequest::getRequestId($visa_verification_request);
+            $visa_verification_request->update([
+                'request_id' => $request_id
+            ]);
+        }
+
+        return $visa_verification_request;
     }
 
     private function getVisaRequestStatus($request_status)
